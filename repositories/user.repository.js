@@ -24,19 +24,7 @@ class UserRepository {
     }
 
 
-    // findUser = async (loginId) => {
-    //     // try {
-    //         //userId 와 일치하는 회원 정보 서칭.
-    //         const userData = await Users.findOne({
-    //             where: {loginId}
-    //         });
-    //         return userData;
-    //     // } catch (error) {
-    //     //     error.message = (error);
-    //     //     error.statusCode = 500;
-    //     //     throw error;
-    //     // }
-    // };
+   
 
 }
 
