@@ -18,28 +18,28 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: INTEGER
+      type: DataTypes.INTEGER,
     },
     userId: {
-      type: STRING
+      type: DataTypes.STRING
     },
     userName: {
-      type: STRING
+      type: DataTypes.STRING
     },
     password: {
-      type: STRING
+      type: DataTypes.STRING
     },
     address: {
-      type: STRING
+      type: DataTypes.STRING
     },
     createdAt: {
       allowNull: false,
-      type: DATE,
+      type: DataTypes.DATE,
       defaultValue: DataTypes.Now
     },
     updatedAt: {
       allowNull: false,
-      type: DATE,
+      type: DataTypes.DATE,
       defaultValue: DataTypes.Now
     }
   }, {
