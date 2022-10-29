@@ -16,7 +16,7 @@ router.use(express.json());
 
 router.use(User);
 // router.use(Goods);
-// router.use(Carts);
+router.use(Carts);
 // router.use(Comments);
 // router.use(Likes);
 
