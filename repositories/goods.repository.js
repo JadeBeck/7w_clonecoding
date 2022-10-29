@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 // const { Goods } = require('../models');
 // const { Likes } = require('../models');
+=======
+const { Goods } = require('../models/index');
+const { Likes } = require('../models/index');
+>>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f
 
 // class GoodsRepository {
 //     // 상품 전체 조회

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const {Users} = require('../models');
+=======
+const {Users} = require('../models/index');
+>>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f
 
 class UserRepository {
     // User 정보 생성.

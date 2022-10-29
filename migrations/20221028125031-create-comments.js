@@ -9,19 +9,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
+      userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'Users',
-          key: 'id',
+          key: 'userId',
         },
         onDelete: 'cascade',
       },
-      // userName: {
-      //   allowNull: false,
-      //   type: Sequelize.STRING
-      // },
       goodsId: {
         type: Sequelize.INTEGER,
         allowNull: false,
