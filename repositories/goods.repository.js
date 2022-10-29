@@ -1,5 +1,5 @@
-const { Goods } = require('../models/goods');
-const { Likes } = require('../models/likes');
+const { Goods } = require('../models/index');
+const { Likes } = require('../models/index');
 
 class GoodsRepository {
     // 상품 전체 조회

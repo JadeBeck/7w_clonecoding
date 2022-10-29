@@ -15,22 +15,22 @@ module.exports = (sequelize, DataTypes) => {
   }
   Likes.init({
     likesId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true,
-      type: INTEGER
+      primaryKey: true
     },
-    id: {
-      type: INTEGER,
+    userId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Users',
-        key: 'id',
+        key: 'userId',
       },
       onDelete: 'cascade',
     },
     goodsId: {
-      type: INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Goods',
@@ -40,12 +40,12 @@ module.exports = (sequelize, DataTypes) => {
     },
     createdAt: {
       allowNull: false,
-      type: DATE,
+      type: DataTypes.DATE,
       defaultValue: DataTypes.Now
     },
     updatedAt: {
       allowNull: false,
-      type: DATE,
+      type: DataTypes.DATE,
       defaultValue: DataTypes.Now
     }
   }, {

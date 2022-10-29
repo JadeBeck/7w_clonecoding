@@ -18,10 +18,10 @@ module.exports = async (req, res, next) => {
 
     try {
         //검증 ( userId만 필요)
-        const { userId } = jwt.verify(authToken, process.env.SECRET_KEY);
+        const { userId, loginId, userName } = jwt.verify(authToken, process.env.SECRET_KEY);
         // console.log("토큰 오픈", jwt.verify(authToken, 'mySecretKey'))
 
-        await Users.findByPk(userId).then((user) => {
+        await Users.findByPk(userId, loginId, userName).then((user) => {
             res.locals.user = user;
             // console.log("토큰 정보 추출", res.locals.user)
             next();
