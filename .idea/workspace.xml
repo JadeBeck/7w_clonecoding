@@ -2,9 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6ad675-59c6-405f-a12f-da03d2b5b27c" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/middlewares/multer-middlewares.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/index" beforeDir="false" afterPath="$PROJECT_DIR$/models/index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/likes.route" beforeDir="false" afterPath="$PROJECT_DIR$/routes/likes.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53e2e6aa-60d3-4f92-8886-9d478eb13fa9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53e2e6aa-60d3-4f92-8886-9d478eb13fa9/storage_v2/_src_/schema/7w_clonecoding.aFxlXg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53e2e6aa-60d3-4f92-8886-9d478eb13fa9/storage_v2/_src_/schema/hyuuniiDB.O8paUA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53e2e6aa-60d3-4f92-8886-9d478eb13fa9/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53e2e6aa-60d3-4f92-8886-9d478eb13fa9/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53e2e6aa-60d3-4f92-8886-9d478eb13fa9/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53e2e6aa-60d3-4f92-8886-9d478eb13fa9/storage_v2/_src_/schema/mysql.osA4Bg.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53e2e6aa-60d3-4f92-8886-9d478eb13fa9/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53e2e6aa-60d3-4f92-8886-9d478eb13fa9/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/53e2e6aa-60d3-4f92-8886-9d478eb13fa9/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/comments.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/comments.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/multer-middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/upload-image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositories/comments.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/comments.repository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/comments.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/comments.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/goods.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/goods.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/comments.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/comments.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +77,7 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "16.17.1",
     "javascript.nodejs.core.library.typings.version": "16.18.2",
-    "last_opened_file_path": "C:/Users/okyee/OneDrive/바탕 화면/개발/스파르타/Javascript/5w-homework-master",
+    "last_opened_file_path": "C:/Users/okyee/OneDrive/바탕 화면/개발/스파르타/Javascript/7w_marketkurly (2)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -82,6 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666950392271</updated>
       <workItem from="1666950394142" duration="55295000" />
+      <workItem from="1667076423340" duration="3208000" />
     </task>
     <servers />
   </component>

@@ -19,8 +19,8 @@ class CommentsRepository {
     }
 
     //신규 댓글
-    createComment = async(goodsId, userId, userName, commentImage, content) => {
-        const createCommentData = await Comments.create({goodsId, userId, userName, commentImage, content});
+    createComment = async(goodsId, userId, userName, img, content) => {
+        const createCommentData = await Comments.create({goodsId, userId, userName, commentImage: img, content});
         return createCommentData;
     };
 
