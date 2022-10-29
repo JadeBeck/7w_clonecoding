@@ -27,8 +27,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     goodsImage: {
       type: DataTypes.STRING,
-<<<<<<< HEAD
-=======
       allowNull: false
     },
     delivery: {
@@ -41,7 +39,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     from: {
       type: DataTypes.STRING,
->>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f
       allowNull: false
     },
     category: {
@@ -55,20 +52,12 @@ module.exports = (sequelize, DataTypes) => {
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
-<<<<<<< HEAD
-      // defaultValue: DataTypes.Now
-=======
       defaultValue: DataTypes.Now
->>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f
     },
     updatedAt: {
       allowNull: false,
       type: DataTypes.DATE,
-<<<<<<< HEAD
-      // defaultValue: DataTypes.Now
-=======
       defaultValue: DataTypes.Now
->>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f
     }
   }, {
     sequelize,

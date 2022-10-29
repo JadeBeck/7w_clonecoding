@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      
+      // define association here
     }
   }
   Users.init({
@@ -18,22 +18,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-<<<<<<< HEAD
-      primaryKey: true,
-      type: DataTypes.INTEGER
-    },
-    userId: {
-      allowNull: false,
-      type: DataTypes.STRING
-    },
-    userName: {
-      allowNull: false,
-      type: DataTypes.STRING
-    },
-    password: {
-      allowNull: false,
-      type: DataTypes.STRING
-=======
       primaryKey: true
     },
     loginId: {
@@ -52,27 +36,16 @@ module.exports = (sequelize, DataTypes) => {
     address: {
       type: DataTypes.STRING,
       allowNull: false
->>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f
     },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
-<<<<<<< HEAD
-      type: DataTypes.DATE,
-      // defaultValue: DataTypes.Now
-=======
       defaultValue: DataTypes.Now
->>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f
     },
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false,
-<<<<<<< HEAD
-      type: DataTypes.DATE,
-      // defaultValue: DataTypes.Now
-=======
       defaultValue: DataTypes.Now
->>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f
     }
   }, {
     sequelize,

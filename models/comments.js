@@ -20,11 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
-<<<<<<< HEAD
-    id: {
-=======
     userId: {
->>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -53,20 +49,12 @@ module.exports = (sequelize, DataTypes) => {
     createdAt: {
       allowNull: false,
       type: DataTypes.DATE,
-<<<<<<< HEAD
-      // defaultValue: DataTypes.Now
-=======
       defaultValue: DataTypes.Now
->>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f
     },
     updatedAt: {
       allowNull: false,
       type: DataTypes.DATE,
-<<<<<<< HEAD
-      // defaultValue: DataTypes.Now
-=======
       defaultValue: DataTypes.Now
->>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f
     }
   }, {
     sequelize,

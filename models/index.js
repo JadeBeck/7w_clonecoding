@@ -6,11 +6,7 @@ const Sequelize = require('sequelize');
 const process = require('process');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-<<<<<<< HEAD:models/index.js
-const config = require('../config/config')[env];
-=======
-const config = require('/../config/config.js')[env];
->>>>>>> 7f2de08f73c991a8c5d7d198458362feac96666f:models/index
+const config = require('../config/config.js')[env];
 const db = {};
 
 let sequelize;
