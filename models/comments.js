@@ -18,20 +18,17 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
-    id: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Users',
-        key: 'id',
+        key: 'userId',
       },
       onDelete: 'cascade',
     },
-    // userName: {
-    //   type: STRING
-    // },
     goodsId: {
       type: DataTypes.INTEGER,
       allowNull: false,

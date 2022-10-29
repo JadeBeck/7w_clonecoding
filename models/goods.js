@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     goodsName: {
       type: DataTypes.STRING,
@@ -26,6 +26,18 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     goodsImage: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    delivery: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    weight: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    from: {
       type: DataTypes.STRING,
       allowNull: false
     },

@@ -14,32 +14,37 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Users.init({
-    id: {
+    userId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
+      primaryKey: true
     },
-    userId: {
-      type: DataTypes.STRING
+    loginId: {
+      type: DataTypes.STRING,
+      unique: true,
+      allowNull: false
     },
     userName: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
     password: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
     address: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
     createdAt: {
-      allowNull: false,
       type: DataTypes.DATE,
+      allowNull: false,
       defaultValue: DataTypes.Now
     },
     updatedAt: {
-      allowNull: false,
       type: DataTypes.DATE,
+      allowNull: false,
       defaultValue: DataTypes.Now
     }
   }, {

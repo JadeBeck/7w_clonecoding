@@ -18,6 +18,18 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      delivery: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      weight: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      from: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       category: {
         type: Sequelize.STRING,
         allowNull: false

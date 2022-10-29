@@ -15,17 +15,17 @@ module.exports = (sequelize, DataTypes) => {
   }
   Likes.init({
     likesId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
+      primaryKey: true
     },
-    id: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Users',
-        key: 'id',
+        key: 'userId',
       },
       onDelete: 'cascade',
     },
