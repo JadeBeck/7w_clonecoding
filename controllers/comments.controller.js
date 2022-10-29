@@ -1,4 +1,4 @@
-const CommentsService = require('../services/comments.service');
+// const CommentsService = require('../services/comments.service');
 
 class CommentsController {
     commentsService = new CommentsService();
@@ -59,7 +59,6 @@ class CommentsController {
             console.log(errormessage);
             res.status(400).json({errormessage});
         }
-
     };
 
     //댓글 삭제
