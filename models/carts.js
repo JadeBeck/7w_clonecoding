@@ -18,10 +18,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: INTEGER,
+      type: DataTypes.INTEGER,
     },
     id: {
-      type: INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Users',
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'cascade',
     },
     goodsId: {
-      type: INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Goods',
@@ -40,17 +40,17 @@ module.exports = (sequelize, DataTypes) => {
     },
     quantity: {
       allowNull: false,
-      type: INTEGER
+      type: DataTypes.INTEGER
     },
     createdAt: {
       allowNull: false,
-      type: DATE,
-      defaultValue: DataTypes.Now
+      type: DataTypes.DATE,
+      // defaultValue: DataTypes.Now
     },
     updatedAt: {
       allowNull: false,
-      type: DATE,
-      defaultValue: DataTypes.Now
+      type: DataTypes.DATE,
+      // defaultValue: DataTypes.Now
     }
   }, {
     sequelize,

@@ -1,9 +1,9 @@
-const CommentsRepository = require('../repositories/goods.repository');
+// const CommentsRepository = require('../repositories/goods.repository');
 
-class GoodsService {
-    commentsRepository = new CommentsRepository();
+// class GoodsService {
+//     commentsRepository = new CommentsRepository();
 
 
-}
+// }
 
-module.exports = GoodsService;
+// module.exports = GoodsService;

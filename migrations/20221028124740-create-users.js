@@ -22,19 +22,15 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      address: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.Now
+        // defaultValue: Sequelize.Now
       },
       updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.Now
+        // defaultValue: Sequelize.Now
       }
     });
   },

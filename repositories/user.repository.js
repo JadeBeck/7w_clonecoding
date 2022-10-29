@@ -1,33 +1,36 @@
-const {Users} = require('../models/users');
+const {Users} = require('../models');
 
 class UserRepository {
     // User 정보 생성.
-    createUser = async (loginId, hash) => {
-        try {
-            // 유저 정보 생성.
-            const userData = await Users.create({loginId, password: hash});
-            return userData;
-        } catch (err) {
-            console.log(err);
-            err.message = `User DB 오류`;
-            err.statusCode = 500;
-            throw err;
-        }
+    createUser = async (userId,userName ,password,address) => {
+
+        const createMembersData = await Users.create({
+            userId,
+            userName,
+            password,
+            address
+          });
+          return createMembersData;
+       
     };
-    // loginId로 User 정보 찾기
-    findUser = async (loginId) => {
-        try {
-            // loginId 와 일치하는 회원 정보 서칭.
+
+   
+
+    //userId로 User 정보 찾기
+    findUser = async (userId) => {
+        // try {
+            //userId 와 일치하는 회원 정보 서칭.
             const userData = await Users.findOne({
-                where: {loginId},
+                where: {userId}
             });
             return userData;
-        } catch (err) {
-            err.message = (`찾는 정보가 없습니다.`);
-            err.statusCode = 500;
-            throw err;
-        }
+        // } catch (error) {
+        //     error.message = (error);
+        //     error.statusCode = 500;
+        //     throw error;
+        // }
     };
+
 }
 
 module.exports = UserRepository;

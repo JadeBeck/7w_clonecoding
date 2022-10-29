@@ -1,8 +1,8 @@
-const { Comments } = require('../models/comments');
+// const { Comments } = require('../models/comments');
 
-class CommentsRepository {
+// class CommentsRepository {
 
 
-}
+// }
 
-module.exports = CommentsRepository;
+// module.exports = CommentsRepository;
