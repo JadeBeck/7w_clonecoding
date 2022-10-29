@@ -1,4 +1,4 @@
-// const CommentsService = require('../services/comments.service');
+const CommentsService = require('../services/comments.service');
 
 class CommentsController {
     commentsService = new CommentsService();
@@ -24,13 +24,13 @@ class CommentsController {
             // const {userId, userName} = res.locals.user;
             const {goodsId} = req.params;
             const {userId, userName, content} = req.body;
-            const commentImage = req.file.location;
+            const img = req.file.location;
 
             if (!content) {
                 res.status(412).json({errorMessage: '댓글 내용을 입력해주세요😌'});
                 return;
             }
-            const createComment = await this.commentsService.createComment(goodsId, userId, userName, commentImage, content);
+            const createComment = await this.commentsService.createComment(goodsId, userId, userName, img, content);
             res.status(201).json({message: '댓글을 등록했어요😚', createComment});
         } catch (err) {
             if (err.code === -1) {
