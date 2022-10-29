@@ -1,4 +1,4 @@
-const {Users} = require('../models');
+const {Users} = require('../models/users');
 
 class UserRepository {
     // User 정보 생성.
