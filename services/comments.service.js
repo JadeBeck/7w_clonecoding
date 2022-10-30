@@ -3,7 +3,7 @@ const UserRepository = require('../repositories/user.repository');
 
 class CommentsService {
     commentsRepository = new CommentsRepository();
-    //댓글 목록 보기
+    //댓글 전체 목록 보기
     findAllComments = async (goodsId, userName) => {
         const findAllCommentResult = await this.commentsRepository.findAllComments(goodsId);
         return findAllCommentResult
@@ -26,8 +26,9 @@ class CommentsService {
     };
 
     //댓글 삭제
-    deleteComment = async (commentsId/*, userId*/) => {
-        const deletedCommentResult = await this.commentsRepository.deleteComment(commentsId/*, userId*/);
+    deleteComment = async (userId, commentsId) => {
+        const deletedCommentResult = await this.commentsRepository.deleteComment(userId, commentsId);
+        // console.log(deletedCommentResult, "service")
         return deletedCommentResult;
     };
 }
