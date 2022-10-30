@@ -18,6 +18,15 @@ module.exports = {
         },
         onDelete: 'cascade',
       },
+      userName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        // references: {
+        //   model: 'Users',
+        //   key: 'userName',
+        // },
+        // onDelete: 'cascade',
+      },
       goodsId: {
         type: Sequelize.INTEGER,
         allowNull: false,
