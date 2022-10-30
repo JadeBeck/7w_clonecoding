@@ -115,17 +115,7 @@ class GoodsService {
     console.log(slicedResult)
 
     return slicedResult
-  
-    
-  
 
-    // for(let i=1; i<=5; i++){
-    // let a = this.randomNum(1, 12)
-    //   let goods = ranGoods[a]   
-    //   result.push(goods)
-      
-    // }
-    // return result
 
   };
 
