@@ -17,13 +17,16 @@ class GoodsController {
 
   // 전체 상품 랜덤 조회
   getAllGoods = async (req, res) => {
-    
-    try{
-      const ranGoods = await this.GoodsService.findRanGoods();
+    const ranGoods = await this.GoodsService.findRanGoods();
       res.status(200).json({ data: ranGoods });
-    }catch (error){
-      res.status(404).json({error: error.message})
-    }
+
+
+    // try{
+    //   const ranGoods = await this.GoodsService.findRanGoods();
+    //   res.status(200).json({ data: ranGoods });
+    // }catch (error){
+    //   res.status(404).json({error: error.message})
+    // }
   };
 
   // 특정 카테고리 상품 조회
@@ -41,15 +44,14 @@ class GoodsController {
   getGoodsById = async (req, res) => {
     const { goodsId } = req.params;
     
+    
+
+    try{
     const good = await this.GoodsService.findGoodsById(goodsId);
     res.status(200).json({ data: good });
-
-    // try{
-    // const good = await this.GoodsService.findGoodsById(goodsId);
-    // res.status(200).json({ data: good });
-    // }catch (error){
-    //   res.status(404).json({error: error.message})
-    // }
+    }catch (error){
+      res.status(404).json({error: error.message})
+    }
   };
 }
 

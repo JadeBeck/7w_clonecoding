@@ -1,5 +1,4 @@
 const { Goods } = require('../models/index');
-const { Likes } = require('../models/index');
 
 class GoodsRepository {
     // 상품 전체 조회 (날짜 내림차순)

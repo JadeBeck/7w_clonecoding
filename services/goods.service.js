@@ -44,7 +44,7 @@ class GoodsService {
     });
 
     return goodsSort.map((goods) => {
-      for(i= 0; i <20; i++){
+      for(let i= 0; i <20; i++){
         let a = this.randomNum(1, 60)
         if(a === goods.goodsId && goods.category === "야채"){
       return {
@@ -112,8 +112,12 @@ class GoodsService {
     });
 
     return allGoods.map((goods) => {
-      for(i= 0; i <5; i++){
-        let a = this.randomNum(1, 60)
+      
+        let a = this.randomNum(1, 10)
+        if(a.length === 5){
+          return
+        }
+        console.log(a)
         if(a === goods.goodsId){
       return {
         goodsId: goods.goodsId,
@@ -128,7 +132,7 @@ class GoodsService {
         updatedAt: goods.updatedAt
       };
     }
-    }
+    
     });
   };
 
@@ -141,9 +145,9 @@ class GoodsService {
         goodsImage: findGoods.goodsImage,
         category: findGoods.category,
         price: findGoods.price,
-        // delivery: goods.delivery,
-        // weight: goods.weight,
-        // from: goods.from,
+        delivery: findGoods.delivery,
+        weight: findGoods.weight,
+        from: findGoods.from,
         createdAt: findGoods.createdAt,
         updatedAt: findGoods.updatedAt
     };
