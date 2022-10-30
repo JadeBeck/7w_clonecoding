@@ -1,10 +1,11 @@
 const UserService = require('../services/user.service');
 const Joi = require('joi');
 
+
 const schema = Joi.object().keys({
     loginId: Joi.string().alphanum().min(6).max(12),
     userName: Joi.string().min(1).max(6),
-    password: Joi.string().min(6).max(12).disallow('userId'),
+    password: Joi.string().min(6).max(12).disallow('loginId'),
     confirmPassword: Joi.ref('password'),
     address: Joi.string()
 });
@@ -29,6 +30,7 @@ class UserController {
     //로그인
     loginUser = async (req, res) => {
         try {
+
             const {loginId, password} = req.body;
             const userData = await this.userService.loginUser(loginId, password);
 

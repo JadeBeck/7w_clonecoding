@@ -2,14 +2,12 @@ const CommentsService = require('../services/comments.service');
 
 class CommentsController {
     commentsService = new CommentsService();
-    //댓글 목록 보기
+    //전체 댓글 목록 보기
     getComments = async (req, res, next) => {
         const {goodsId} = req.params;
-        const {userName} = req.body;
-        // const {userName} = res.locals.user;
 
         try {
-            const getAllComments = await this.commentsService.findAllComments(goodsId, userName);
+            const getAllComments = await this.commentsService.findAllComments(goodsId);
             res.status(200).json({comments: getAllComments});
         } catch (err) {
             const errormessage = `${req.method} ${req.originalUrl} : ${err.message}`;
@@ -21,9 +19,9 @@ class CommentsController {
 //신규 댓글
     createComment = async (req, res, next) => {
         try {
-            // const {userId, userName} = res.locals.user;
+            const {userId, userName} = res.locals.user;
             const {goodsId} = req.params;
-            const {userId, userName, content} = req.body;
+            const {content} = req.body;
             const img = req.file.location;
 
             if (!content) {
@@ -45,8 +43,8 @@ class CommentsController {
     //댓글 수정
     updateComment = async (req, res) => {
         try {
-            // const {userId} = res.locals.user;
-            const {content, userId} = req.body;
+            const {userId} = res.locals.user;
+            const {content} = req.body;
             const {commentsId} = req.params;
 
             const updateComment = await this.commentsService.updateComment(userId, commentsId, content);
@@ -64,21 +62,20 @@ class CommentsController {
     //댓글 삭제
     deleteComment = async (req, res) => {
         try {
-            // const {userId} = res.locals.user;
+            const {userId} = res.locals.user;
             const {commentsId} = req.params;
 
-            const deleteComment = await this.commentsService.deleteComment(/*userId,*/ commentsId);
-            if (deleteComment === false) {
-                return res.status(400).json({message: "작성자 본인만 삭제할 수 있어요~!"})
+            const deleteComment = await this.commentsService.deleteComment(userId, commentsId);
+            if (deleteComment === 0) {
+                return res.status(400).json({message: "작성자 본인만 삭제할 수 있어요~!"});
             }
             res.status(200).json({message: "댓글 삭제 완료!!"})
         } catch (err) {
             if (err.code === -1) {
-                res.status(401).send({errorMessage: '댓글 삭제 fail,,,'});
+                const errormessage = `${req.method} ${req.originalUrl} : ${err.message}`;
+                console.log(errormessage);
+                res.status(400).json({errormessage});
             }
-            const errormessage = `${req.method} ${req.originalUrl} : ${err.message}`;
-            console.log(errormessage);
-            res.status(400).json({errormessage});
         }
     };
 }
