@@ -29,6 +29,15 @@ module.exports = (sequelize, DataTypes) => {
       },
       onDelete: 'cascade',
     },
+    userName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      // references: {
+      //   model: 'Users',
+      //   key: 'userName',
+      // },
+      // onDelete: 'cascade',
+    },
     goodsId: {
       type: DataTypes.INTEGER,
       allowNull: false,

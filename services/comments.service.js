@@ -6,7 +6,7 @@ class CommentsService {
     //댓글 목록 보기
     findAllComments = async (goodsId, userName) => {
         const findAllCommentResult = await this.commentsRepository.findAllComments(goodsId);
-        return {
+        return findAllCommentResult /*{
             goodsId: findAllCommentResult[0].dataValues.goodsId,
             commentsId: findAllCommentResult[0].dataValues.commentsId,
             userName: userName,
@@ -14,7 +14,7 @@ class CommentsService {
             commentImage: findAllCommentResult[0].dataValues.commentImage,
             createdAt: findAllCommentResult[0].dataValues.createdAt,
             updatedAt: findAllCommentResult[0].dataValues.updatedAt,
-        };
+        };*/
     };
 
     //신규 댓글
