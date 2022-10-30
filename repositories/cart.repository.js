@@ -1,5 +1,6 @@
 const { Carts, Goods } = require('../models'); // DB영역에서는 꼭 필요한 존재.
 
+
 class CartRepository {
   // 장바구니 생성
   createCt = async ( goodsId, userId, quantity ) => {
@@ -22,29 +23,24 @@ class CartRepository {
 
   // 장바구니 조회
   findAllCart = async ( userId ) => {
-    const allCart = await Carts.findAll({
+      const allCart = await Carts.findAll({
       where: { userId },
-      attributes: ['goodsId'], // 기준이 되는 아이
       include: {
         model: Goods,
-        order: [['createdAt', 'DESC']], // carts의 createdAt 기준
-        attributes: ['goodsName', 'goodsImage', 'price', 'delivery', 'weight'],
-      }
+        key : 'goodsId',
+        attributes: ['goodsName', 'goodsImage', 'price', 'delivery', 'weight'],}    
+          
+    //   where: { userId },
+    //   attributes: ['goodsId'], // 기준이 되는 아이
+    //   include: {
+    //     model: Goods,
+    //     order: [['createdAt', 'DESC']], // carts의 createdAt 기준
+    //     attributes: ['goodsName', 'goodsImage', 'price', 'delivery', 'weight'],
+    //   }
     });
     return allCart;
   };    
 
-//   myLikePosts = async (userId) => {
-//     return await Likes.findAll({
-//         where: { userId },
-//         attributes: ['postId'],
-//         include: {
-//             model: Posts,
-//             order: [['likes', 'desc']],
-//             attributes: ['title', 'nickname', 'likes', 'createdAt'],
-//         }, // 인클루드 시에는 벨류값으로 모델명 직접입력 인클루드한 posts를 좋아요 갯수로 내림차순
-//     });
-// };    
     
  
   // 장바구니 수정
