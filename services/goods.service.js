@@ -103,7 +103,7 @@ class GoodsService {
   // 전체 상품중 20개 랜덤 추출
   findRanGoods = async () => {
     const ranGoods = await this.GoodsRepository.findAllGoods();
-    
+    let randomIndexArray = []
     const result = []
 
     for(let i=1; i<=5; i++){
