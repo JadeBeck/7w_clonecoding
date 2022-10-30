@@ -1,28 +1,118 @@
-
+const { array } = require('joi');
 const GoodsRepository = require('../repositories/goods.repository');
 
 class GoodsService {
     GoodsRepository = new GoodsRepository();
   
-  // 상품 조회
+  // 난수 생성
+  randomNum = (min, max) => {
+  const rannum = Math.floor(Math.random() * (max - min +1)) + min;
+
+  return rannum;
+}
+
+  // 전체 상품 조회
   findAllGoods = async () => {
     const allGoods = await this.GoodsRepository.findAllGoods();
+    console.log(allGoods)
 
     allGoods.sort((a, b) => {
-      return b.createdAt - a.createdAt;
+      return a.createdAt - b.createdAt;
     });
 
     return allGoods.map((goods) => {
+      console.log(goods.goodsId)
       return {
         goodsId: goods.goodsId,
         goodsName: goods.goodsName,
         goodsImage: goods.goodsImage,
         category: goods.category,
         price: goods.price,
+        delivery: goods.delivery,
+        weight: goods.weight,
+        from: goods.from,
         createdAt: goods.createdAt,
         updatedAt: goods.updatedAt
       };
     });
+  };
+
+  // 야채 상품 랜덤 추출
+  findVegeGoods = async () => {
+    const vegeGoods = await this.GoodsRepository.findVegeGoods();
+    const result = []
+    
+      for(let i= 0; i <2; i++){
+      let a = this.randomNum(0, 2)
+      console.log(a)
+       let goods = vegeGoods[a]
+       result.push(goods)
+    }
+    console.log(result)
+    return result
+    
+  };
+
+    // 수산물 상품 랜덤 추출
+    findSeaGoods = async () => {
+      const seaGoods = await this.GoodsRepository.findSeaGoods();
+      const result = []
+      
+        for(let i= 0; i <2; i++){
+        let a = this.randomNum(0, 2)
+        console.log(a)
+         let goods = seaGoods[a]
+         result.push(goods)
+      }
+      console.log(result)
+      return result
+      
+    };
+
+       // 정육 상품 랜덤 추출
+       findMeatGoods = async () => {
+        const meatGoods = await this.GoodsRepository.findMeatGoods();
+        const result = []
+        
+          for(let i= 0; i <2; i++){
+          let a = this.randomNum(0, 2)
+          console.log(a)
+           let goods = meatGoods[a]
+           result.push(goods)
+        }
+        console.log(result)
+        return result
+        
+      };
+
+        // 과일 상품 랜덤 추출
+        findFruitGoods = async () => {
+          const fruitGoods = await this.GoodsRepository.findFruitGoods();
+          const result = []
+          
+            for(let i= 0; i <2; i++){
+            let a = this.randomNum(0, 2)
+            console.log(a)
+             let goods = fruitGoods[a]
+             result.push(goods)
+          }
+          console.log(result)
+          return result
+          
+        };
+  // 전체 상품중 20개 랜덤 추출
+  findRanGoods = async () => {
+    const ranGoods = await this.GoodsRepository.findAllGoods();
+    
+    const result = []
+
+    for(let i=1; i<=5; i++){
+    let a = this.randomNum(1, 12)
+      let goods = ranGoods[a]   
+      result.push(goods)
+    }
+    return result
+
   };
 
   // 상품 상세조회
@@ -34,57 +124,15 @@ class GoodsService {
         goodsImage: findGoods.goodsImage,
         category: findGoods.category,
         price: findGoods.price,
+        delivery: findGoods.delivery,
+        weight: findGoods.weight,
+        from: findGoods.from,
         createdAt: findGoods.createdAt,
         updatedAt: findGoods.updatedAt
     };
   };
-
-  getLikeGoods = async ({ id }) => {
-    const getLikeGoodsAll = await this.GoodsRepository.getLikeGoods({ id})
-   
-    if (getLikeGoodsAll) {
-        getLikeGoodsAll.sort((a, b) => {
-            return b.totalLike - a.totalLike;
-        })
-
-        return getLikeGoodsAll.map((goods) => {
-            return {
-                goodsId: goods.goodsId,
-                goodsName: goods.goodsName,
-                goodsImage: goods.goodsImage,
-                category: goods.category,
-                price: goods.price,
-                createdAt: goods.createdAt,
-                updatedAt: goods.updatedAt
-            }
-        })   
-    } else {
-        throw new Error ('좋아요를 누른 게시글이 존재 하지않습니다.')
-    }
-    
-}
-putLike = async({goodsId, id}) => {
-
-    const likeLog = await this.GoodsRepository.findLikeLog({goodsId, id});
-
-    if (!likeLog) {
-
-        await this.GoodsRepository.increaseLike({postId, id});
-        return {"increase" :true, message: "해당 게시글에 좋아요를 눌렀습니다."}
-        
-    } else if (likeLog) {
-
-        await this.GoodsRepository.decreaseLike({postId, id});
-        return {"decrease": true, message: "해당 게시글에 좋아요를 취소하였습니다."}
-        
-    } else {
-        throw new Error ("좋아요 반영에 실패하였습니다.")
-    }
-}
-   
-    
-
-
+  
+  
 
 }
 
