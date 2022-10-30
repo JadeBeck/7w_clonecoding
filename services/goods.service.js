@@ -1,4 +1,5 @@
 const { array } = require('joi');
+const shuffle_array = require('shuffle-array');
 const GoodsRepository = require('../repositories/goods.repository');
 
 class GoodsService {
@@ -10,6 +11,7 @@ class GoodsService {
 
   return rannum;
 }
+
 
   // 전체 상품 조회
   findAllGoods = async () => {
@@ -100,18 +102,20 @@ class GoodsService {
           return result
           
         };
-  // 전체 상품중 20개 랜덤 추출
+  // 전체 상품 랜덤 추출
   findRanGoods = async () => {
     const ranGoods = await this.GoodsRepository.findAllGoods();
-    
-    const result = []
+    let result = new Array();
 
-    for(let i=1; i<=5; i++){
-    let a = this.randomNum(1, 12)
-      let goods = ranGoods[a]   
-      result.push(goods)
+    for (let i = 0; i < ranGoods.length; i++){
+      result.push(ranGoods[i])
     }
-    return result
+    shuffle_array(result);
+    let slicedResult = result.slice(0, 5);
+    console.log(slicedResult)
+
+    return slicedResult
+
 
   };
 
