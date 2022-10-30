@@ -9,7 +9,7 @@ class UserService {
   userRepository = new UserRepository();
 
   createUser = async (loginId, userName, password, address) => {
-    const user = await this.userRepository.loginUser(loginId);
+    const user = await this.userRepository.loginUser(loginId); //repository에서 loginId불러오기
     if (user) {
       throw { message: "이미 존재하는 아이디입니다." };
     }

@@ -5,7 +5,7 @@ const Joi = require('joi');
 const schema = Joi.object().keys({
     loginId        : Joi.string().alphanum().min(6).max(12),
     userName       : Joi.string().min(1).max(6),
-    password       : Joi.string().min(6).max(12).disallow('userId'),
+    password       : Joi.string().min(6).max(12).disallow('loginId'),
     confirmPassword: Joi.ref('password'),
     address       : Joi.string()
 });
@@ -19,8 +19,8 @@ class UserController {
 
         try {
             const {loginId,userName,password,confirmPassword,address} = req.body;
-            await schema.validateAsync(req.body);
-            await this.userService.createUser(loginId,userName,password,confirmPassword,address);
+            await schema.validateAsync(req.body); //joi로 유효값 설정한거 body에 적용??
+            await this.userService.createUser(loginId,userName,password,address);  //db에 넣을값들
 
             res.status(201).json({message: "회원가입 완료!"});  
 
