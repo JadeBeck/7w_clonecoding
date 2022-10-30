@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const cookieParser = require('cookie-parser');
-const User = require('./user.route');
+const User = require("./user.route");
 const Goods = require('../routes/goods.route');
 const Carts = require('../routes/carts.route');
 const Comments = require('./comments.route');
-const Likes = require('../routes/likes.route');
+const Likes = require('./likes.route');
 
 
 // const commentsRouter = require('./comments.route');  //댓글

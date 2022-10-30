@@ -1,11 +1,11 @@
-
+const { array } = require('joi');
 const GoodsRepository = require('../repositories/goods.repository');
 
 class GoodsService {
     GoodsRepository = new GoodsRepository();
   
   // 난수 생성
-  randomNum = async (min, max) => {
+  randomNum = (min, max) => {
   const rannum = Math.floor(Math.random() * (max - min +1)) + min;
 
   return rannum;
@@ -35,105 +35,82 @@ class GoodsService {
     });
   };
 
-  // 카테고리별 상품 랜덤 20개 추출
-  findSortGoods = async () => {
-    const goodsSort = await this.GoodsRepository.findAllGoods();
-
-    goodsSort.sort((a, b) => {
-      return b.createdAt - a.createdAt;
-    });
-
-    return goodsSort.map((goods) => {
-      for(let i= 0; i <20; i++){
-        let a = this.randomNum(1, 60)
-        if(a === goods.goodsId && goods.category === "야채"){
-      return {
-        goodsId: goods.goodsId,
-        goodsName: goods.goodsName,
-        goodsImage: goods.goodsImage,
-        category: goods.category,
-        price: goods.price,
-        delivery: goods.delivery,
-        weight: goods.weight,
-        from: goods.from,
-        createdAt: goods.createdAt,
-        updatedAt: goods.updatedAt
-      };
-    }else if(a === goods.goodsId && goods.category === "수산"){
-      return {
-        goodsId: goods.goodsId,
-        goodsName: goods.goodsName,
-        goodsImage: goods.goodsImage,
-        category: goods.category,
-        price: goods.price,
-        delivery: goods.delivery,
-        weight: goods.weight,
-        from: goods.from,
-        createdAt: goods.createdAt,
-        updatedAt: goods.updatedAt
-      };
-    }else if(a === goods.goodsId && goods.category === "정육"){
-      return {
-        goodsId: goods.goodsId,
-        goodsName: goods.goodsName,
-        goodsImage: goods.goodsImage,
-        category: goods.category,
-        price: goods.price,
-        delivery: goods.delivery,
-        weight: goods.weight,
-        from: goods.from,
-        createdAt: goods.createdAt,
-        updatedAt: goods.updatedAt
-      };
-    }else if(a === goods.goodsId && goods.category === "과일"){
-      return {
-        goodsId: goods.goodsId,
-        goodsName: goods.goodsName,
-        goodsImage: goods.goodsImage,
-        category: goods.category,
-        price: goods.price,
-        delivery: goods.delivery,
-        weight: goods.weight,
-        from: goods.from,
-        createdAt: goods.createdAt,
-        updatedAt: goods.updatedAt
-      };
+  // 야채 상품 랜덤 추출
+  findVegeGoods = async () => {
+    const vegeGoods = await this.GoodsRepository.findVegeGoods();
+    const result = []
+    
+      for(let i= 0; i <2; i++){
+      let a = this.randomNum(0, 2)
+      console.log(a)
+       let goods = vegeGoods[a]
+       result.push(goods)
     }
-    }
-    });
+    console.log(result)
+    return result
+    
   };
 
+    // 수산물 상품 랜덤 추출
+    findSeaGoods = async () => {
+      const seaGoods = await this.GoodsRepository.findSeaGoods();
+      const result = []
+      
+        for(let i= 0; i <2; i++){
+        let a = this.randomNum(0, 2)
+        console.log(a)
+         let goods = seaGoods[a]
+         result.push(goods)
+      }
+      console.log(result)
+      return result
+      
+    };
+
+       // 정육 상품 랜덤 추출
+       findMeatGoods = async () => {
+        const meatGoods = await this.GoodsRepository.findMeatGoods();
+        const result = []
+        
+          for(let i= 0; i <2; i++){
+          let a = this.randomNum(0, 2)
+          console.log(a)
+           let goods = meatGoods[a]
+           result.push(goods)
+        }
+        console.log(result)
+        return result
+        
+      };
+
+        // 과일 상품 랜덤 추출
+        findFruitGoods = async () => {
+          const fruitGoods = await this.GoodsRepository.findFruitGoods();
+          const result = []
+          
+            for(let i= 0; i <2; i++){
+            let a = this.randomNum(0, 2)
+            console.log(a)
+             let goods = fruitGoods[a]
+             result.push(goods)
+          }
+          console.log(result)
+          return result
+          
+        };
   // 전체 상품중 20개 랜덤 추출
   findRanGoods = async () => {
-    const allGoods = await this.GoodsRepository.findAllGoods();
-
-    allGoods.sort((a, b) => {
-      return b.createdAt - a.createdAt;
-    });
-
-    return allGoods.map((goods) => {
-      
-        let a = this.randomNum(1, 10)
-        if(a.length === 5){
-          return
-        }
-        console.log(a)
-        if(a === goods.goodsId){
-      return {
-        goodsId: goods.goodsId,
-        goodsName: goods.goodsName,
-        goodsImage: goods.goodsImage,
-        category: goods.category,
-        price: goods.price,
-        delivery: goods.delivery,
-        weight: goods.weight,
-        from: goods.from,
-        createdAt: goods.createdAt,
-        updatedAt: goods.updatedAt
-      };
-    }
+    const ranGoods = await this.GoodsRepository.findAllGoods();
     
-    });
+    const result = []
+
+    for(let i=0; i<5; i++){
+    let a = this.randomNum(1, 15)
+      let goods = ranGoods[a]   
+      result.push(goods)
+    }
+    return result
+
   };
 
   // 상품 상세조회
