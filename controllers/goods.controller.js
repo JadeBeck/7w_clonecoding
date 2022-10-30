@@ -7,7 +7,7 @@ class GoodsController {
   getGoods = async (req, res) => {
     
     const goods = await this.GoodsService.findAllGoods();
-    res.status(200).json({ data: goods });
+      res.status(200).json({ data: goods });
 
     // try{
     //   const goods = await this.GoodsService.findAllGoods();

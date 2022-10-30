@@ -14,12 +14,14 @@ class GoodsService {
   // 전체 상품 조회
   findAllGoods = async () => {
     const allGoods = await this.GoodsRepository.findAllGoods();
+    console.log(allGoods)
 
     allGoods.sort((a, b) => {
-      return b.createdAt - a.createdAt;
+      return a.createdAt - b.createdAt;
     });
 
     return allGoods.map((goods) => {
+      console.log(goods.goodsId)
       return {
         goodsId: goods.goodsId,
         goodsName: goods.goodsName,
@@ -104,8 +106,8 @@ class GoodsService {
     
     const result = []
 
-    for(let i=0; i<5; i++){
-    let a = this.randomNum(1, 15)
+    for(let i=1; i<=5; i++){
+    let a = this.randomNum(1, 12)
       let goods = ranGoods[a]   
       result.push(goods)
     }
