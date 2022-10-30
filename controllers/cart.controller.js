@@ -7,18 +7,16 @@ class CartController {
   // 장바구니 생성
   createCart = async (req, res, next) => {
     const { goodsId } = req.params;
-    const { id } = res.locals.user;
+    const { userId } = res.locals.user;
+    const { quantity } = req.body;
        
-    try {
-      const { comment } = await commentSchema.validateAsync(req.body);
-      
+    try { 
       const createCartData = await this.cartService.createCt(
-        comment, 
-        postId,
-        id,
-        nickname,
+        goodsId, 
+        userId,
+        quantity,
       );
-      res.status(201).json({ data: createCartData });
+      res.status(201).json({ message: "장바구니에 담았습니다.", data: createCartData });
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
@@ -26,10 +24,10 @@ class CartController {
 
    // 장바구니 조회
    getCarts = async (req, res, next) => {
-    const { cartId } = req.params;
+    const { userId } = res.locals.user;
     
     try {
-      const cartsListUp = await this.cartService.findAllCart(cartId);
+      const cartsListUp = await this.cartService.findAllCart(userId);
       res.status(200).json({ data: cartsListUp });
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -38,17 +36,17 @@ class CartController {
     
   // 장바구니 수정
   updateCart = async (req, res, next) => {
-    const { commentId } = req.params;
-    const id = res.locals.user.id;
+    const { cartsId } = req.params;
+    const { userId } = res.locals.user;
+    const { quantity } = req.body;
 
     try {
-      const { comment } = await commentSchema.validateAsync(req.body);  
       const updateCartDate = await this.cartService.updateCt(
-        comment,
-        commentId,
-        id
+        cartsId,
+        userId,
+        quantity,
       );
-      res.status(201).json({ message: updateCartDate });
+      res.status(201).json({ message: "수정하였습니다.", data: updateCartDate });
     } catch (error) {
       res.status(401).json({ error: error.message });
     }
@@ -57,12 +55,12 @@ class CartController {
   // 장바구니 삭제
   deleteCart = async (req, res, next) => {
     const { cartsId } = req.params;
-    const id = res.locals.user.id;
+    const userId = res.locals.user.userId;
 
     try {
       const deleteCartDate = await this.cartService.deleteCt(
         cartsId,
-        id
+        userId
       );
       res.status(200).json({ message: deleteCartDate });
     } catch (error) {

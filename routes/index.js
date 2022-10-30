@@ -14,7 +14,7 @@ router.use(cookieParser());
 router.use(express.json());
 
 
-router.use(User);
+// router.use(User);
 // router.use(Goods);
 router.use(Carts);
 // router.use(Comments);
