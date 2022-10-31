@@ -1,7 +1,6 @@
 const {Likes} = require('../models');
 const {Goods} = require('../models');
 
-
 class LikesRepository {
 
 //게시글 좋아요 누르기    
@@ -36,6 +35,19 @@ class LikesRepository {
         //     error.statusCode = 500;
         //     throw error;
         // }
+    };
+
+    // 찜 목록 조회
+    findLikeGoods = async (userId) => {
+        const likegoods = await Likes.findAll({
+            where: { userId },
+            include: {
+              model: Goods,
+              key : 'goodsId',
+              attributes: ['goodsName', 'goodsImage', 'price'],}    
+            
+          });
+          return likegoods;
     };
 }
 

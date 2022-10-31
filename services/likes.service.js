@@ -19,6 +19,11 @@ class LikesService {
         //     throw error;
         // }
     };
+
+    findLikeGoods = async (userId) => {
+        const findLikeGoods = await this.likesRepository.findLikeGoods(userId);
+        return findLikeGoods
+    }
 }
 
 module.exports = LikesService;
