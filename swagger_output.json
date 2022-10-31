@@ -1,5 +1,5 @@
 {
-  "openapi": "3.0.0",
+  "swagger": "2.0",
   "info": {
     "title": "Team7s Marketkurly Clone Coding",
     "description": "7조의 API가 잘 굴러갈까나?🤔",
@@ -10,6 +10,8 @@
       "url": "http://localhost:3000"
     }
   ],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
   "paths": {
     "/users/signup": {
       "post": {
@@ -48,7 +50,23 @@
       "post": {
         "tags": ["회원 정보 API"],
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+            "loginId": {
+              "example": "아이디"
+            },
+            "password": {
+              "example": "패스워드"
+            }
+              }
+            }
+          }
+        ],
         "responses": {}
       }
     },
@@ -56,7 +74,9 @@
       "get": {
         "tags": ["상품 API"],
         "description": "",
-        "parameters": [],
+        "parameters": [
+
+        ],
         "responses": {}
       }
     },
