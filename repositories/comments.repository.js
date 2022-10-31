@@ -19,6 +19,12 @@ class CommentsRepository {
         return createCommentData;
     };
 
+   //본인의 댓글 맞는지 확인하기
+    findWriterOfComment = async(commentsId) => {
+        const writerOfComment = await Comments.findOne({where: {commentsId}});
+        return writerOfComment;
+    }
+
     //댓글 수정
     updateComment = async(userId, commentsId, content) => {
         const updatedCommentData = await Comments.update({content}, {where: {userId, commentsId}});

@@ -47,6 +47,16 @@ class CommentsController {
             const {content} = req.body;
             const {commentsId} = req.params;
 
+            if (content === "") {
+                res.status(412).json({errorMessage: "댓글 내용을 입력해주세요!"});
+            }
+
+            //본인의 댓글 맞는지 확인해보기
+            const whoWroteThisComment = await this.commentsService.whoMadeThisComment(commentsId);
+            if (userId !== whoWroteThisComment.dataValues.userId) {
+                return res.status(400).json({errorMessage: "댓글 작성자 본인만 수정할 수 있어요~!"});
+            }
+
             const updateComment = await this.commentsService.updateComment(userId, commentsId, content);
             res.status(200).json(updateComment);
         } catch (err) {
@@ -67,7 +77,7 @@ class CommentsController {
 
             const deleteComment = await this.commentsService.deleteComment(userId, commentsId);
             if (deleteComment === 0) {
-                return res.status(400).json({message: "작성자 본인만 삭제할 수 있어요~!"});
+                return res.status(400).json({errorMessage: "댓글 작성자 본인만 삭제할 수 있어요~!"});
             }
             res.status(200).json({message: "댓글 삭제 완료!!"})
         } catch (err) {
