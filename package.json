@@ -22,7 +22,8 @@
     "multer-s3": "^2.10.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.25.3"
+    "sequelize": "^6.25.3",
+    "shuffle-array": "^1.0.1"
   },
   "devDependencies": {
     "sequelize-cli": "^6.5.2"

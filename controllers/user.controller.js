@@ -1,7 +1,6 @@
 const UserService = require('../services/user.service');
 const Joi = require('joi');
 
-
 const schema = Joi.object().keys({
     loginId        : Joi.string().alphanum().min(6).max(12),
     userName       : Joi.string().min(1).max(6),
