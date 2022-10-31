@@ -25,7 +25,8 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.25.3",
     "swagger": "^0.7.5",
-    "swagger-autogen": "^2.22.0"
+    "swagger-autogen": "^2.22.0",
+    "shuffle-array": "^1.0.1"
   },
   "devDependencies": {
     "sequelize-cli": "^6.5.2",

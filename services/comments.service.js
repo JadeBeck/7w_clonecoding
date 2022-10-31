@@ -15,11 +15,14 @@ class CommentsService {
         return createCommentResult;
     };
 
+    //본인의 댓글 맞는지 확인해보기
+    whoMadeThisComment = async (commentsId) => {
+        const writerOfComment = await this.commentsRepository.findWriterOfComment(commentsId);
+        return writerOfComment;
+    }
+
     //댓글 수정
     updateComment = async (userId, commentsId, content) => {
-        if (content === "") {
-            throw new Error("댓글 내용을 입력해주세요!");
-        }
         await this.commentsRepository.updateComment(userId, commentsId, content);
         const commentResult = await this.commentsRepository.findComment(userId, commentsId);
         return commentResult;
