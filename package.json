@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autogen": "^0.0.1",
     "aws-sdk": "^2.1242.0",
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
@@ -22,9 +23,14 @@
     "multer-s3": "^2.10.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.25.3"
+    "sequelize": "^6.25.3",
+    "shuffle-array": "^1.0.1",
+    "swagger": "^0.7.5",
+    "swagger-autogen": "^2.22.0"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.5.2"
+    "sequelize-cli": "^6.5.2",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.5.0"
   }
 }
