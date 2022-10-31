@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6ad675-59c6-405f-a12f-da03d2b5b27c" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/comments.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/comments.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/goods.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/goods.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositories/comments.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/comments.repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/comments.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/comments.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/auth-middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth-middlewares.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/goods.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/goods.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666950392271</updated>
       <workItem from="1666950394142" duration="55295000" />
-      <workItem from="1667076423340" duration="32103000" />
+      <workItem from="1667076423340" duration="37895000" />
     </task>
     <servers />
   </component>
