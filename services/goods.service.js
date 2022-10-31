@@ -42,64 +42,64 @@ class GoodsService {
   // 야채 상품 랜덤 추출
   findVegeGoods = async () => {
     const vegeGoods = await this.GoodsRepository.findVegeGoods();
-    const result = []
-    
-      for(let i= 0; i <2; i++){
-      let a = this.randomNum(0, 2)
-      console.log(a)
-       let goods = vegeGoods[a]
-       result.push(goods)
+    let result = new Array();
+
+    for (let i = 0; i < vegeGoods.length; i++){
+      result.push(vegeGoods[i])
     }
-    console.log(result)
-    return result
+    shuffle_array(result);
+    let slicedResult = result.slice(0, 2);
+    console.log(slicedResult)
+
+    return slicedResult
     
   };
 
     // 수산물 상품 랜덤 추출
     findSeaGoods = async () => {
       const seaGoods = await this.GoodsRepository.findSeaGoods();
-      const result = []
-      
-        for(let i= 0; i <2; i++){
-        let a = this.randomNum(0, 2)
-        console.log(a)
-         let goods = seaGoods[a]
-         result.push(goods)
+      let result = new Array();
+
+      for (let i = 0; i < seaGoods.length; i++){
+        result.push(seaGoods[i])
       }
-      console.log(result)
-      return result
+      shuffle_array(result);
+      let slicedResult = result.slice(0, 2);
+      console.log(slicedResult)
+  
+      return slicedResult
       
     };
 
        // 정육 상품 랜덤 추출
        findMeatGoods = async () => {
         const meatGoods = await this.GoodsRepository.findMeatGoods();
-        const result = []
-        
-          for(let i= 0; i <2; i++){
-          let a = this.randomNum(0, 2)
-          console.log(a)
-           let goods = meatGoods[a]
-           result.push(goods)
+        let result = new Array();
+
+        for (let i = 0; i < meatGoods.length; i++){
+          result.push(meatGoods[i])
         }
-        console.log(result)
-        return result
+        shuffle_array(result);
+        let slicedResult = result.slice(0, 2);
+        console.log(slicedResult)
+    
+        return slicedResult
         
       };
 
         // 과일 상품 랜덤 추출
         findFruitGoods = async () => {
           const fruitGoods = await this.GoodsRepository.findFruitGoods();
-          const result = []
-          
-            for(let i= 0; i <2; i++){
-            let a = this.randomNum(0, 2)
-            console.log(a)
-             let goods = fruitGoods[a]
-             result.push(goods)
+          let result = new Array();
+
+          for (let i = 0; i < fruitGoods.length; i++){
+            result.push(fruitGoods[i])
           }
-          console.log(result)
-          return result
+          shuffle_array(result);
+          let slicedResult = result.slice(0, 2);
+          console.log(slicedResult)
+      
+          return slicedResult
           
         };
   // 전체 상품 랜덤 추출
