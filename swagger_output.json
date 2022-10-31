@@ -124,7 +124,14 @@
       "get": {
         "tags": ["상품 API"],
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "goodsId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {}
       }
     },
@@ -146,6 +153,19 @@
             "in": "header",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "quantity": {
+                  "example": "수량"
+                }
+              }
             }
           }
         ],
@@ -195,6 +215,19 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "quantity": {
+                  "example": "수량"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -234,7 +267,16 @@
       "get": {
         "tags": ["리뷰 API"],
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "goodsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {}
       },
       "post": {
@@ -255,6 +297,21 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+          "name": "form-data",
+          "in": "form-data",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "img": {
+                "example" : "후기 이미지"
+              },
+              "content": {
+                "example": "후기 내용"
+              }
+            }
+          }
           }
         ],
         "responses": {
@@ -282,6 +339,19 @@
             "in": "header",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "content": {
+                  "example": "후기 내용"
+                }
+              }
             }
           }
         ],
