@@ -33,7 +33,7 @@ class UserController {
             const {loginId, password} = req.body;
             const userData = await this.userService.loginUser(loginId, password);
 
-            res.status(200).json({data: userData, message: "로그인 완료!"})
+            res.status(200).json({data: userData, message: "로그인 완료!,userName : "})
         } catch (e) {
             res.status(401).json({message: e.message})
         }
