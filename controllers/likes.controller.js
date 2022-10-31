@@ -4,7 +4,7 @@ class LikesController {
   likesService = new LikesService(); 
 
 
-//찜 등록 &취소      PUT) localhost:3000/goods/:goodsId/like
+//찜 등록 &취소     PUT) localhost:3000/goods/:goodsId/like
 createLikes = async (req, res, next) => {
 
   try{
