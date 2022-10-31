@@ -32,7 +32,7 @@ class GoodsService {
     });
   };
 
-  // 야채 상품 랜덤 추출
+  // 채소 상품 랜덤 추출
   findVegeGoods = async () => {
     const vegeGoods = await this.GoodsRepository.findVegeGoods();
     let result = new Array();
@@ -41,7 +41,7 @@ class GoodsService {
       result.push(vegeGoods[i])
     }
     shuffle_array(result);
-    let slicedResult = result.slice(0, 2);
+    let slicedResult = result.slice(0, 8);
     console.log(slicedResult)
 
     return slicedResult
@@ -57,7 +57,7 @@ class GoodsService {
         result.push(seaGoods[i])
       }
       shuffle_array(result);
-      let slicedResult = result.slice(0, 2);
+      let slicedResult = result.slice(0, 8);
       console.log(slicedResult)
   
       return slicedResult
@@ -73,7 +73,7 @@ class GoodsService {
           result.push(meatGoods[i])
         }
         shuffle_array(result);
-        let slicedResult = result.slice(0, 2);
+        let slicedResult = result.slice(0, 8);
         console.log(slicedResult)
     
         return slicedResult
@@ -89,7 +89,7 @@ class GoodsService {
             result.push(fruitGoods[i])
           }
           shuffle_array(result);
-          let slicedResult = result.slice(0, 2);
+          let slicedResult = result.slice(0, 8);
           console.log(slicedResult)
       
           return slicedResult
@@ -104,7 +104,7 @@ class GoodsService {
       result.push(ranGoods[i])
     }
     shuffle_array(result);
-    let slicedResult = result.slice(0, 5);
+    let slicedResult = result.slice(0, 8);
     console.log(slicedResult)
 
     return slicedResult
