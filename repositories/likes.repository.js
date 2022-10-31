@@ -15,17 +15,19 @@ class LikesRepository {
         }
     };
 
+    // 찜 등록 저장
     updateLikes = async (userId, goodsId) => {
         try {
             const createlikes = await Likes.create({userId, goodsId});
             return createlikes;
         } catch {
-            const error = new Error(`찜 등록 요청 중 오류가 발생했습니다.`);
+            const error = new Error(`존재하는 상품이 아닙니다.`);
             error.statusCode = 500;
             throw error;
         }
     };
 
+    //찜 취소
     deletelikes = async (userId, goodsId) => {
         try {
             const deletelikes = await Likes.destroy({where: {userId, goodsId}});
