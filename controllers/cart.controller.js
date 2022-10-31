@@ -46,7 +46,7 @@ class CartController {
         userId,
         quantity,
       );
-      res.status(201).json({ message: "수정하였습니다.", data: updateCartDate });
+      res.status(201).json({ message: updateCartDate });
     } catch (error) {
       res.status(401).json({ error: error.message });
     }

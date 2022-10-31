@@ -48,7 +48,8 @@ class CartService {
 
     // if (userId === FindCmt.userId) {
       
-    return await this.cartRepository.updateCt(cartsId, userId, quantity); 
+    await this.cartRepository.updateCt(cartsId, userId, quantity);
+    return '수정하였습니다.';
     // } else {
     //   throw new Error("수정 권한이 없습니다.");
     // }
