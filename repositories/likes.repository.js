@@ -1,12 +1,12 @@
 const {Likes} = require('../models');
-
+const {Goods} = require('../models');
 
 class LikesRepository {
 
 //게시글 좋아요 누르기    
-    uselikes = async (goodsId, userId) => {
+    uselikes = async (userId, goodsId) => {
         // try {
-            const finduselikes = await Likes.findOne({where: {goodsId, userId}});
+            const finduselikes = await Likes.findOne({where: {userId, goodsId}});
             return finduselikes;
         // } catch {
         //     const error = new Error(`서버 실행 중 오류가 발생했습니다.`);
@@ -15,12 +15,10 @@ class LikesRepository {
         // }
     };
 
-    updateLikes = async (goodsId, userId) => {
-        // try {
-            const findlikes = await Goods.findOne({where: {goodsId, userId}});
-            await Goods.increment({likes: 1}, {where: {goodsId}});
-            await Likes.create({goodsId, userId});
-            return findlikes;
+    updateLikes = async (userId, goodsId) => {
+        // try {}
+            const createlikes = await Likes.create({userId, goodsId});
+            return createlikes;
         // } catch {
         //     const error = new Error(`좋아요 요청 중 오류가 발생했습니다.`);
         //     error.statusCode = 500;
@@ -28,18 +26,28 @@ class LikesRepository {
         // }
     };
 
-    deletelikes = async (goodsId, userId) => {
-        // try {
-            const findlikes = await Posts.findOne({where: {goodsId, userId}});
-
-            await Posts.decrement({likes: 1}, {where: {goodsId}});
-            await Likes.destroy({where: {goodsId, userId}});
-            return findlikes;
+    deletelikes = async (userId, goodsId) => {
+        // try {}
+            const deletelikes = await Likes.destroy({where: {userId, goodsId}});
+            return deletelikes;
         // } catch {
         //     const error = new Error(`좋아요 취소 중 오류가 발생했습니다.`);
         //     error.statusCode = 500;
         //     throw error;
         // }
+    };
+
+    // 찜 목록 조회
+    findLikeGoods = async (userId) => {
+        const likegoods = await Likes.findAll({
+            where: { userId },
+            include: {
+              model: Goods,
+              key : 'goodsId',
+              attributes: ['goodsName', 'goodsImage', 'price'],}    
+            
+          });
+          return likegoods;
     };
 }
 
