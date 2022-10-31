@@ -5,25 +5,18 @@ const GoodsRepository = require('../repositories/goods.repository');
 class GoodsService {
     GoodsRepository = new GoodsRepository();
   
-  // 난수 생성
-  randomNum = (min, max) => {
-  const rannum = Math.floor(Math.random() * (max - min +1)) + min;
 
-  return rannum;
-}
 
 
   // 전체 상품 조회
   findAllGoods = async () => {
     const allGoods = await this.GoodsRepository.findAllGoods();
-    console.log(allGoods)
 
     allGoods.sort((a, b) => {
-      return a.createdAt - b.createdAt;
+      return b.createdAt - a.createdAt;
     });
 
     return allGoods.map((goods) => {
-      console.log(goods.goodsId)
       return {
         goodsId: goods.goodsId,
         goodsName: goods.goodsName,
