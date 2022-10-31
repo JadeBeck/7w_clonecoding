@@ -29,7 +29,7 @@ class GoodsController {
   getVegeGoods = async (req, res) => {
 
     try{
-      const sortGoods = await this.GoodsService.findSortGoods();
+      const sortGoods = await this.GoodsService.findVegeGoods();
       res.status(200).json({ data: sortGoods });
     }catch (error){
       res.status(404).json({error: error.message})
@@ -40,7 +40,7 @@ class GoodsController {
   getSeaGoods = async (req, res) => {
   
     try{
-      const sortGoods = await this.GoodsService.findSortGoods();
+      const sortGoods = await this.GoodsService.findSeaGoods();
       res.status(200).json({ data: sortGoods });
     }catch (error){
       res.status(404).json({error: error.message})
@@ -51,7 +51,7 @@ class GoodsController {
     getMeatGoods = async (req, res) => {
       
       try{
-        const sortGoods = await this.GoodsService.findSortGoods();
+        const sortGoods = await this.GoodsService.findMeatGoods();
         res.status(200).json({ data: sortGoods });
       }catch (error){
         res.status(404).json({error: error.message})
@@ -62,7 +62,7 @@ class GoodsController {
        getFruitGoods = async (req, res) => {
     
         try{
-          const sortGoods = await this.GoodsService.findSortGoods();
+          const sortGoods = await this.GoodsService.findFruitGoods();
           res.status(200).json({ data: sortGoods });
         }catch (error){
           res.status(404).json({error: error.message})
