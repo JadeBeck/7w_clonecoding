@@ -8,7 +8,7 @@ class GoodsController {
     
     try{
       const goods = await this.GoodsService.findAllGoods();
-      res.status(200).json({ data: goods });
+      res.status(200).json( {data: goods} );
     }catch (error){
       res.status(404).json({error: error.message})
     }

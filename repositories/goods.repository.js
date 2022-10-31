@@ -8,9 +8,9 @@ class GoodsRepository {
         return goods;
     };
 
-    // 야채 상품 전체
+    // 채소 상품 전체
     findVegeGoods = async() =>{
-        const vegeGoods = await Goods.findAll({where : { category : "야채"}});
+        const vegeGoods = await Goods.findAll({where : { category : "채소"}});
         return vegeGoods;
     };
 
