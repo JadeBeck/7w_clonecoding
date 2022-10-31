@@ -18,7 +18,6 @@ class UserController {
             const {loginId, userName, password, confirmPassword, address} = req.body;
             await schema.validateAsync(req.body);  //joi로 유효값 설정한거 body에 적용??
             const con = await this.userService.createUser(loginId, userName, password, address); //db에 넣을값들
-            console.log(con)
 
             res.status(201).json({message: "회원가입 완료!"});
 
@@ -34,7 +33,7 @@ class UserController {
             const {loginId, password} = req.body;
             const userData = await this.userService.loginUser(loginId, password);
 
-            res.status(201).json({data: userData, message: "로그인 완료!"})
+            res.status(200).json({data: userData, message: "로그인 완료!"})
         } catch (e) {
             res.status(401).json({message: e.message})
         }
