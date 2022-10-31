@@ -40,7 +40,7 @@ class UserService {
       throw { message: "아이디 또는 비밀번호가 일치하지 않습니다." };
     }
     return {
-      token: jwt.sign({ userId: user.userId }, process.env.SECRET_KEY, {  //토큰 만들어주기  
+      token: jwt.sign({ userId: user.userId }, process.env.SECRETKEY, {  //토큰 만들어주기  
         expiresIn: "24h",  
       }),
     };

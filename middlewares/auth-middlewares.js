@@ -18,7 +18,7 @@ module.exports = async (req, res, next) => {
 
     try {
         //검증 ( userId만 필요)
-        const { userId } = jwt.verify(authToken, process.env.SECRET_KEY); //jwt의 verify(확인해주는것)메소드를 사용 
+        const { userId } = jwt.verify(authToken, process.env.SECRETKEY); //jwt의 verify(확인해주는것)메소드를 사용 
         // console.log("토큰 오픈", jwt.verify(authToken, 'mySecretKey'))
 
         await Users.findByPk(userId).then((user) => {  //Users에서 userId로 찾은 데이터를 갖고온게 user가 되고 그것을 res.locals.user에 담아준다.
