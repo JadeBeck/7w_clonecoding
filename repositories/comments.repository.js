@@ -3,18 +3,13 @@ const {Comments} = require('../models/index');
 class CommentsRepository {
     //댓글 전체 목록 보기
     findAllComments = async (goodsId) => {
-        const allCommentsData = await Comments.findAll({
-            where: {goodsId},
-            order: [['createdAt', 'DESC']],
-        });
+        const allCommentsData = await Comments.findAll({where: {goodsId}, order: [['createdAt', 'DESC']]});
         return allCommentsData;
     };
 
     //댓글 한개 보기
     findComment = async (userId, commentsId) => {
-        const findCommentData = await Comments.findOne({
-            where: {userId, commentsId}
-        });
+        const findCommentData = await Comments.findOne({where: {userId, commentsId}});
         return findCommentData;
     }
 
@@ -24,6 +19,12 @@ class CommentsRepository {
         return createCommentData;
     };
 
+   //본인의 댓글 맞는지 확인하기
+    findWriterOfComment = async(commentsId) => {
+        const writerOfComment = await Comments.findOne({where: {commentsId}});
+        return writerOfComment;
+    }
+
     //댓글 수정
     updateComment = async(userId, commentsId, content) => {
         const updatedCommentData = await Comments.update({content}, {where: {userId, commentsId}});
@@ -31,10 +32,11 @@ class CommentsRepository {
     };
 
     //댓글 삭제
-    deleteComment = async(commentsId/*, userId*/) => {
-        const deleteCommentData = await Comments.destroy({
-            where: {commentsId/*, userId*/},
-        });
+    deleteComment = async(userId, commentsId) => {
+        const deleteCommentData = await Comments.destroy({where: {userId, commentsId},});
+        // console.log(deleteCommentData)
+        // console.log(commentsId, "commentsId")
+        // console.log(userId)
         return deleteCommentData;
     };
 }

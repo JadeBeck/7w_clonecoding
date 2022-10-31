@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6ad675-59c6-405f-a12f-da03d2b5b27c" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositories/user.repository.js" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/user.repository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/auth-middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth-middlewares.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/goods.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/goods.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +62,7 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "16.17.1",
     "javascript.nodejs.core.library.typings.version": "16.18.2",
-    "last_opened_file_path": "C:/Users/okyee/OneDrive/바탕 화면/개발/스파르타/Javascript/7w_marketkurly (2)",
+    "last_opened_file_path": "C:/Users/okyee/OneDrive/바탕 화면/개발/스파르타/Javascript/6W_Mini",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -84,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666950392271</updated>
       <workItem from="1666950394142" duration="55295000" />
-      <workItem from="1667076423340" duration="18399000" />
+      <workItem from="1667076423340" duration="37895000" />
     </task>
     <servers />
   </component>
