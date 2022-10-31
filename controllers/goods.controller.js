@@ -6,89 +6,67 @@ class GoodsController {
   // 상품 전체 조회
   getGoods = async (req, res) => {
     
-    const goods = await this.GoodsService.findAllGoods();
+    try{
+      const goods = await this.GoodsService.findAllGoods();
       res.status(200).json({ data: goods });
-
-    // try{
-    //   const goods = await this.GoodsService.findAllGoods();
-    //   res.status(200).json({ data: goods });
-    // }catch (error){
-    //   res.status(404).json({error: error.message})
-    // }
+    }catch (error){
+      res.status(404).json({error: error.message})
+    }
   };
 
   // 전체 상품 랜덤 조회
   getAllGoods = async (req, res) => {
-    
-    const ranGoods = await this.GoodsService.findRanGoods();
+   
+    try{
+      const ranGoods = await this.GoodsService.findRanGoods();
       res.status(200).json({ data: ranGoods });
-
-    // try{
-    //   const ranGoods = await this.GoodsService.findRanGoods();
-    //   res.status(200).json({ data: ranGoods });
-    // }catch (error){
-    //   res.status(404).json({error: error.message})
-    // }
+    }catch (error){
+      res.status(404).json({error: error.message})
+    }
   };
 
   // 야채 상품 조회
   getVegeGoods = async (req, res) => {
-    
-    const vegeGoods = await this.GoodsService.findVegeGoods();
-      res.status(200).json({ data: vegeGoods });
-     
 
-    // try{
-    //   const sortGoods = await this.GoodsService.findSortGoods();
-    //   res.status(200).json({ data: sortGoods });
-    // }catch (error){
-    //   res.status(404).json({error: error.message})
-    // }
+    try{
+      const sortGoods = await this.GoodsService.findSortGoods();
+      res.status(200).json({ data: sortGoods });
+    }catch (error){
+      res.status(404).json({error: error.message})
+    }
   };
 
   // 수산물 상품 조회
   getSeaGoods = async (req, res) => {
-    
-    const seaGoods = await this.GoodsService.findSeaGoods();
-      res.status(200).json({ data: seaGoods });
-     
-
-    // try{
-    //   const sortGoods = await this.GoodsService.findSortGoods();
-    //   res.status(200).json({ data: sortGoods });
-    // }catch (error){
-    //   res.status(404).json({error: error.message})
-    // }
+  
+    try{
+      const sortGoods = await this.GoodsService.findSortGoods();
+      res.status(200).json({ data: sortGoods });
+    }catch (error){
+      res.status(404).json({error: error.message})
+    }
   };
 
     // 정육 상품 조회
     getMeatGoods = async (req, res) => {
-    
-      const meatGoods = await this.GoodsService.findMeatGoods();
-        res.status(200).json({ data: meatGoods });
-       
-  
-      // try{
-      //   const sortGoods = await this.GoodsService.findSortGoods();
-      //   res.status(200).json({ data: sortGoods });
-      // }catch (error){
-      //   res.status(404).json({error: error.message})
-      // }
+      
+      try{
+        const sortGoods = await this.GoodsService.findSortGoods();
+        res.status(200).json({ data: sortGoods });
+      }catch (error){
+        res.status(404).json({error: error.message})
+      }
     };
 
        // 과일 상품 조회
        getFruitGoods = async (req, res) => {
     
-        const fruitGoods = await this.GoodsService.findFruitGoods();
-          res.status(200).json({ data: fruitGoods });
-         
-    
-        // try{
-        //   const sortGoods = await this.GoodsService.findSortGoods();
-        //   res.status(200).json({ data: sortGoods });
-        // }catch (error){
-        //   res.status(404).json({error: error.message})
-        // }
+        try{
+          const sortGoods = await this.GoodsService.findSortGoods();
+          res.status(200).json({ data: sortGoods });
+        }catch (error){
+          res.status(404).json({error: error.message})
+        }
       };
 
   // 상품 상세조회
