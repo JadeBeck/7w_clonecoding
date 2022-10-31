@@ -6,6 +6,6 @@ const LikesController = require('../controllers/likes.controller');
 const likesController = new LikesController();
 
 router.put('/goods/:goodsId/like', authMiddleware, likesController.createLikes);
-// router.get('/goods/like', authMiddleware, likesController.getLikes);
+router.get('/like', authMiddleware, likesController.getLikeGoods);
 
 module.exports = router;
