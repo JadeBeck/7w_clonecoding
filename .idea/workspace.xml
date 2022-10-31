@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6ad675-59c6-405f-a12f-da03d2b5b27c" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/middlewares/auth-middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth-middlewares.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/goods.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/goods.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swagger.js" beforeDir="false" afterPath="$PROJECT_DIR$/swagger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swagger_output.json" beforeDir="false" afterPath="$PROJECT_DIR$/swagger_output.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +75,12 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\okyee\OneDrive\바탕 화면\개발\스파르타\Javascript\7w_marketkurly" />
+      <recent name="C:\Users\okyee\OneDrive\바탕 화면\개발\스파르타\Javascript\7w_marketkurly\swagger" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
@@ -82,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1666950392271</updated>
       <workItem from="1666950394142" duration="55295000" />
-      <workItem from="1667076423340" duration="37895000" />
+      <workItem from="1667076423340" duration="48327000" />
     </task>
     <servers />
   </component>
