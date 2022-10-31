@@ -10,6 +10,7 @@ const app = express();
 const http = Http.createServer(app);
 const port = process.env.EXPRESS_PORT || 3000;
 
+//app.config['JSON_AS_ASCII'] = False
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
