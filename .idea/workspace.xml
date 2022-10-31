@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6ad675-59c6-405f-a12f-da03d2b5b27c" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5604128d-08fd-474b-b2cc-99b7ea34f632.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5604128d-08fd-474b-b2cc-99b7ea34f632.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swagger_output.json" beforeDir="false" afterPath="$PROJECT_DIR$/swagger_output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/auth-middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth-middlewares.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/20221028124844-create-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20221028124844-create-goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +65,7 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "16.17.1",
     "javascript.nodejs.core.library.typings.version": "16.18.2",
-    "last_opened_file_path": "C:/Users/okyee/OneDrive/바탕 화면/개발/스파르타/Javascript/6W_Mini",
+    "last_opened_file_path": "C:/Users/okyee/OneDrive/바탕 화면/개발/스파르타/Javascript/7w_marketkurly",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -87,7 +91,8 @@
       <option name="presentableId" value="Default" />
       <updated>1666950392271</updated>
       <workItem from="1666950394142" duration="55295000" />
-      <workItem from="1667076423340" duration="56999000" />
+      <workItem from="1667076423340" duration="62266000" />
+      <workItem from="1667217361600" duration="3329000" />
     </task>
     <servers />
   </component>
