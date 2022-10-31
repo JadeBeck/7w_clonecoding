@@ -15,7 +15,7 @@ class UserController {
     // 회원 가입.
     createUser = async (req, res) => {
         try {
-            const {loginId, userName, password, address, confirmPassword} = req.body;
+            const {loginId, userName, password, confirmPassword, address} = req.body;
             await schema.validateAsync(req.body);  //joi로 유효값 설정한거 body에 적용??
             const con = await this.userService.createUser(loginId, userName, password, address); //db에 넣을값들
             console.log(con)

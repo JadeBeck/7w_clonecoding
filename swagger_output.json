@@ -1,0 +1,430 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Team7s Marketkurly Clone Coding",
+    "description": "7조의 API가 잘 굴러갈까나?🤔",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/users/signup": {
+      "post": {
+        "tags": ["회원 정보 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "loginId": {
+                  "example": "아이디"
+                },
+                "userName": {
+                  "example": "이름"
+                },
+                "password": {
+                  "example": "패스워드"
+                },
+                "confirmPassword": {
+                  "example": "컨펌 패스워드"
+                },
+                "address": {
+                  "example": "주소"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": ["회원 정보 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+            "loginId": {
+              "example": "아이디"
+            },
+            "password": {
+              "example": "패스워드"
+            }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/goods/newist": {
+      "get": {
+        "tags": ["상품 API"],
+        "description": "",
+        "parameters": [
+
+        ],
+        "responses": {}
+      }
+    },
+    "/goods/all": {
+      "get": {
+        "tags": ["상품 API"],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/goods/vege": {
+      "get": {
+        "tags": ["상품 API"],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/goods/sea": {
+      "get": {
+        "tags": ["상품 API"],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/goods/meat": {
+      "get": {
+        "tags": ["상품 API"],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/goods/fruit": {
+      "get": {
+        "tags": ["상품 API"],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/goods/{goodsId}": {
+      "get": {
+        "tags": ["상품 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "goodsId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/carts/{goodsId}": {
+      "post": {
+        "tags": ["장바구니 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "goodsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "quantity": {
+                  "example": "수량"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/carts/list": {
+      "get": {
+        "tags": ["장바구니 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/carts/{cartsId}": {
+      "put": {
+        "tags": ["장바구니 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "cartsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "quantity": {
+                  "example": "수량"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["장바구니 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "cartsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/comments/{goodsId}": {
+      "get": {
+        "tags": ["리뷰 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "goodsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      },
+      "post": {
+        "tags": ["리뷰 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "goodsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+          "name": "form-data",
+          "in": "form-data",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "img": {
+                "example" : "후기 이미지"
+              },
+              "content": {
+                "example": "후기 내용"
+              }
+            }
+          }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/comments/{commentsId}": {
+      "put": {
+        "tags": ["리뷰 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "commentsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "type": "string",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "content": {
+                  "example": "후기 내용"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["리뷰 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "commentsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/goods/{goodsId}/like": {
+      "put": {
+        "tags": ["찜하기 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "goodsId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "in": "header",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

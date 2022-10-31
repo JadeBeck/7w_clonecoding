@@ -1,22 +1,28 @@
-const swaggerAutogen = require('swagger-autogen')();
+const swaggerAutogen = require('swagger-autogen')({ openapi: '3.0.0' });
 require('dotenv').config();
 
 const options = {
-    swaggerDefinition: {
-        info: {
-            title: 'Test API',
-            version: '1.0.0',
-            description: 'Test API with express',
-        },
-        host: 'localhost:3300',
-        basePath: '/'
+    info: {
+        title: 'Team7s Marketkurly Clone Coding',
+        description: '7조의 API가 잘 굴러갈까나?🤔',
     },
-    apis: ['./routes/*.js', './swagger/*']
+    servers: [
+        {
+            url: 'http://localhost:3000',
+        },
+    ],
+    schemes: ['http'],
+    consumes: ['application/json'],
+    produces: ['application/json'],
+    securityDefinitions: {
+        bearerAuth: {
+            type: 'http',
+            scheme: 'bearer',
+            in: 'header',
+            bearerFormat: 'JWT',
+        },
+    },
 };
-
-const specs = swaggereJsdoc(options);
-
-module.exports = {
-    swaggerUi,
-    specs
-};
+const outputFile = './swagger_output.json';
+const endpointsFiles = ['./app.js'];
+swaggerAutogen(outputFile, endpointsFiles, options);
