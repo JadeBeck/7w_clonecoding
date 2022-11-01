@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1e6ad675-59c6-405f-a12f-da03d2b5b27c" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/goods.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/goods.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/goods.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/goods.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/auth-middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/auth-middlewares.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +61,7 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "16.17.1",
     "javascript.nodejs.core.library.typings.version": "16.18.2",
-    "last_opened_file_path": "C:/Users/okyee/OneDrive/바탕 화면/개발/스파르타/Javascript/7w_marketkurly",
+    "last_opened_file_path": "C:/Users/okyee/OneDrive/바탕 화면/개발/스파르타/Javascript/6W_Mini",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
@@ -92,7 +88,7 @@
       <updated>1666950392271</updated>
       <workItem from="1666950394142" duration="55295000" />
       <workItem from="1667076423340" duration="62266000" />
-      <workItem from="1667217361600" duration="11619000" />
+      <workItem from="1667217361600" duration="18287000" />
     </task>
     <servers />
   </component>
