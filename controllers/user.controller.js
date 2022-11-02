@@ -23,7 +23,7 @@ class UserController {
 
         } catch(f){
          
-            return res.status(200).json({message: f.message});
+            return res.status(400).json({message: f.message});  //중복된 아이디입니다
         }
     };
 
@@ -39,7 +39,7 @@ class UserController {
         res.status(201).json({message: "회원가입 완료!"});
             
         } catch (f) {
-            return res.status(401).json({message: f.message});
+            return res.status(400).json({message: f.message});  //아이디 중복확인(버튼)을 해주세요
         }
     };
 
@@ -51,11 +51,10 @@ class UserController {
             const userData = await this.userService.loginUser(loginId, password);
             //const payload = JSON.parse(atob(userData.token.split('.')[1]));
           
-            
 
             res.status(200).json({data: userData, message: "로그인 완료!"})
         } catch (e) {
-            res.status(401).json({message: e.message})
+            res.status(400).json({message: e.message})
         }
 
     };
