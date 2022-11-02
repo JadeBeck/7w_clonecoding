@@ -157,40 +157,14 @@
             }
           },
           {
-            "name": "formData",
-            "in": "commentImage",
-            "type": "file",
-            "schema": {
-              "type": "file",
-              "properties": {
-                "quantity": {
-                  "example": "이미지"
-                }
-              }
-            }
-          },
-          {
-            "name": "formData",
-            "in": "content",
-            "type": "string",
-            "schema": {
-              "type": "string",
-              "properties": {
-                "content": {
-                  "example": "댓글 내용"
-                }
-              }
-            }
-          },
-          {
-            "name": "formData",
-            "in": "content",
+            "name": "body",
+            "in": "body",
             "type": "string",
             "schema": {
               "type": "string",
               "properties": {
                 "quantity": {
-                  "example": "댓글 내용"
+                  "example": "수량"
                 }
               }
             }
