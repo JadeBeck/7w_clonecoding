@@ -10,12 +10,19 @@
       "url": "http://localhost:3000"
     }
   ],
-  "consumes": ["application/json", "multipart/form-data"],
-  "produces": ["application/json"],
+  "consumes": [
+    "application/json",
+    "multipart/form-data"
+  ],
+  "produces": [
+    "application/json"
+  ],
   "paths": {
     "/users/signup": {
       "post": {
-        "tags": ["회원 정보 API"],
+        "tags": [
+          "회원 정보 API"
+        ],
         "description": "",
         "parameters": [
           {
@@ -48,7 +55,9 @@
     },
     "/users/login": {
       "post": {
-        "tags": ["회원 정보 API"],
+        "tags": [
+          "회원 정보 API"
+        ],
         "description": "",
         "parameters": [
           {
@@ -57,12 +66,12 @@
             "schema": {
               "type": "object",
               "properties": {
-            "loginId": {
-              "example": "아이디"
-            },
-            "password": {
-              "example": "패스워드"
-            }
+                "loginId": {
+                  "example": "아이디"
+                },
+                "password": {
+                  "example": "패스워드"
+                }
               }
             }
           }
@@ -72,17 +81,20 @@
     },
     "/goods/newist": {
       "get": {
-        "tags": ["상품 API"],
+        "tags": [
+          "상품 API"
+        ],
         "description": "",
         "parameters": [
-
         ],
         "responses": {}
       }
     },
     "/goods/all": {
       "get": {
-        "tags": ["상품 API"],
+        "tags": [
+          "상품 API"
+        ],
         "description": "",
         "parameters": [],
         "responses": {}
@@ -90,7 +102,9 @@
     },
     "/goods/vege": {
       "get": {
-        "tags": ["상품 API"],
+        "tags": [
+          "상품 API"
+        ],
         "description": "",
         "parameters": [],
         "responses": {}
@@ -98,7 +112,9 @@
     },
     "/goods/sea": {
       "get": {
-        "tags": ["상품 API"],
+        "tags": [
+          "상품 API"
+        ],
         "description": "",
         "parameters": [],
         "responses": {}
@@ -106,7 +122,9 @@
     },
     "/goods/meat": {
       "get": {
-        "tags": ["상품 API"],
+        "tags": [
+          "상품 API"
+        ],
         "description": "",
         "parameters": [],
         "responses": {}
@@ -114,7 +132,9 @@
     },
     "/goods/fruit": {
       "get": {
-        "tags": ["상품 API"],
+        "tags": [
+          "상품 API"
+        ],
         "description": "",
         "parameters": [],
         "responses": {}
@@ -122,7 +142,9 @@
     },
     "/goods/{goodsId}": {
       "get": {
-        "tags": ["상품 API"],
+        "tags": [
+          "상품 API"
+        ],
         "description": "",
         "parameters": [
           {
@@ -136,7 +158,9 @@
       },
       "/carts/{goodsId}": {
         "post": {
-          "tags": ["장바구니 API"],
+          "tags": [
+            "장바구니 API"
+          ],
           "description": "",
           "parameters": [
             {
@@ -168,261 +192,278 @@
               }
             }
           ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
+          "responses": {
+            "401": {
+              "description": "Unauthorized"
+            }
           }
         }
-      }
-    },
-    "/carts/list": {
-      "get": {
-        "tags": ["장바구니 API"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+      },
+      "/carts/list": {
+        "get": {
+          "tags": [
+            "장바구니 API"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              }
             }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
+          ],
+          "responses": {
+            "401": {
+              "description": "Unauthorized"
+            }
           }
         }
-      }
-    },
-    "/carts/{cartsId}": {
-      "put": {
-        "tags": ["장바구니 API"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "cartsId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "type": "string",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "quantity": {
-                  "example": "수량"
+      },
+      "/carts/{cartsId}": {
+        "put": {
+          "tags": [
+            "장바구니 API"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "cartsId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "type": "string",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "quantity": {
+                    "example": "수량"
+                  }
                 }
               }
             }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          }
-        }
-      },
-      "delete": {
-        "tags": ["장바구니 API"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "cartsId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+          ],
+          "responses": {
+            "401": {
+              "description": "Unauthorized"
             }
           }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          }
-        }
-      }
-    },
-    "/comments/{goodsId}": {
-      "get": {
-        "tags": ["리뷰 API"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "goodsId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {}
-      },
-      "post": {
-        "tags": ["리뷰 API"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "goodsId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-          "name": "form-data",
-          "in": "form-data",
-          "schema": {
-            "type": "object",
-            "properties": {
-              "img": {
-                "example" : "후기 이미지"
-              },
-              "content": {
-                "example": "후기 내용"
+        },
+        "delete": {
+          "tags": [
+            "장바구니 API"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "cartsId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
               }
             }
-          }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
+          ],
+          "responses": {
+            "401": {
+              "description": "Unauthorized"
+            }
           }
         }
-      }
-    },
-    "/comments/{commentsId}": {
-      "put": {
-        "tags": ["리뷰 API"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "commentsId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
+      },
+      "/comments/{goodsId}": {
+        "get": {
+          "tags": [
+            "리뷰 API"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "goodsId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
             }
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "type": "string",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "content": {
-                  "example": "후기 내용"
+          ],
+          "responses": {}
+        },
+        "post": {
+          "tags": [
+            "리뷰 API"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "goodsId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "form-data",
+              "in": "form-data",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "img": {
+                    "example": "후기 이미지"
+                  },
+                  "content": {
+                    "example": "후기 내용"
+                  }
                 }
               }
             }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
+          ],
+          "responses": {
+            "401": {
+              "description": "Unauthorized"
+            }
           }
         }
       },
-      "delete": {
-        "tags": ["리뷰 API"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "commentsId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
+      "/comments/{commentsId}": {
+        "put": {
+          "tags": [
+            "리뷰 API"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "commentsId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "body",
+              "in": "body",
+              "type": "string",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "content": {
+                    "example": "후기 내용"
+                  }
+                }
+              }
             }
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
+          ],
+          "responses": {
+            "401": {
+              "description": "Unauthorized"
             }
           }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
+        },
+        "delete": {
+          "tags": [
+            "리뷰 API"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "commentsId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "401": {
+              "description": "Unauthorized"
+            }
+          }
+        }
+      },
+      "/goods/{goodsId}/like": {
+        "put": {
+          "tags": [
+            "찜하기 API"
+          ],
+          "description": "",
+          "parameters": [
+            {
+              "name": "goodsId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "401": {
+              "description": "Unauthorized"
+            }
           }
         }
       }
     },
-    "/goods/{goodsId}/like": {
-      "put": {
-        "tags": ["찜하기 API"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "goodsId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          }
+    "components": {
+      "securitySchemes": {
+        "bearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "in": "header",
+          "bearerFormat": "JWT"
         }
-      }
-    }
-  },
-  "components": {
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer",
-        "in": "header",
-        "bearerFormat": "JWT"
       }
     }
   }
