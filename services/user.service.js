@@ -8,7 +8,7 @@ require("dotenv").config();
 class UserService {
   userRepository = new UserRepository();
 
-<<<<<<< HEAD
+
   //아이디 중복검사
   checkID = async (loginId) => {
     const user = await this.userRepository.findUser(loginId);
@@ -20,10 +20,7 @@ class UserService {
 
   };
   
-=======
-  //
 
->>>>>>> f4a60407c4fbcf94e9d7f809797cab732822f291
   //회원가입
   createUser = async (loginId, userName, password, address) => {
     const user = await this.userRepository.loginUser(loginId);
