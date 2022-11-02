@@ -22,8 +22,9 @@ class UserController {
             return res.status(200).json({message: "사용 가능한 아이디입니다."});
 
         } catch(f){
-         
+
             return res.status(400).json({message: f.message});  //중복된 아이디입니다
+
         }
     };
 
