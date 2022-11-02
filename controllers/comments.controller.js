@@ -16,7 +16,7 @@ class CommentsController {
         }
     };
 
-//신규 댓글
+//신규 댓글!!
     createComment = async (req, res, next) => {
         try {
             const {userId, userName} = res.locals.user;
