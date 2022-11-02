@@ -9,16 +9,21 @@ class CartController {
     const { goodsId } = req.params;
     const { userId } = res.locals.user;
     const { quantity } = req.body;
-       
-    try { 
-      const createCartData = await this.cartService.createCt(
-        goodsId, 
-        userId,
-        quantity,
-      );
-      res.status(201).json({ message: "장바구니에 담았습니다.", data: createCartData });
+
+    try {
+      //장바구니 기존에 담은 품목 여부 조회
+      const didIAlreadyPutThis = await this.cartService.didIAlreadyPutThis(goodsId, userId);
+
+      if (didIAlreadyPutThis) {
+        const plusNumsOfGoods = await this.cartService.plusNumsOfGoods(goodsId, userId, quantity);
+        res.status(201).json({message: "장바구니에 해당 상품의 수량을 추가했습니다.", data: plusNumsOfGoods});
+      } else {
+        const createCartData = await this.cartService.createCt(goodsId, userId, quantity,
+        );
+        res.status(201).json({message: "장바구니에 담았습니다.", data: createCartData});
+      }
     } catch (error) {
-      res.status(400).json({ error: error.message });
+      res.status(400).json({error: error.message});
     }
   };
 

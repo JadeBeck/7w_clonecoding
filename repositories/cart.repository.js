@@ -2,6 +2,23 @@ const { Carts, Goods } = require('../models'); // DB영역에서는 꼭 필요�
 
 
 class CartRepository {
+  //장바구니 기존에 담은 품목 여부 조회
+  didIAlreadyPutThis = async (goodsId, userId) => {
+    const didIAlreadyPutThis = await Carts.findOne({
+      where: {goodsId, userId}});
+    return didIAlreadyPutThis;
+  }
+
+  //기존에 담은 품목일 경우 수량만 플러스
+  plusNumsOfGoods = async (goodsId, userId, quantity) => {
+    const plusNumsOfGoods = await Carts.increment({quantity}, {where: {goodsId, userId}});
+    const findGoodsInCart = await Carts.findOne({where: {goodsId, userId}, include: {
+        model: Goods,
+        key : 'goodsId',
+        attributes: ['goodsName', 'goodsImage', 'price', 'delivery', 'weight']}});
+    return findGoodsInCart;
+  }
+
   // 장바구니 생성
   createCt = async ( goodsId, userId, quantity ) => {
     const createCartData = await Carts.create({

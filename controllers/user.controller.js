@@ -12,6 +12,7 @@ const schema = Joi.object().keys({
 class UserController {
     userService = new UserService();
 
+<<<<<<< HEAD
     //중복 아이디 
     checkID = async (req, res) => {
         try {
@@ -26,6 +27,8 @@ class UserController {
         }
     };
 
+=======
+>>>>>>> f4a60407c4fbcf94e9d7f809797cab732822f291
 
 
     // 회원가입
