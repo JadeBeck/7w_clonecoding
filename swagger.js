@@ -12,7 +12,7 @@ const options = {
         },
     ],
     schemes: ['http'],
-    consumes: ['application/json'],
+    consumes: ['application/json', 'multipart/form-data'],
     produces: ['application/json'],
     securityDefinitions: {
         bearerAuth: {

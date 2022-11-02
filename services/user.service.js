@@ -8,6 +8,8 @@ require("dotenv").config();
 class UserService {
   userRepository = new UserRepository();
 
+  //
+
   //회원가입
   createUser = async (loginId, userName, password, address) => {
     const user = await this.userRepository.loginUser(loginId);

@@ -10,7 +10,7 @@
       "url": "http://localhost:3000"
     }
   ],
-  "consumes": ["application/json"],
+  "consumes": ["application/json", "multipart/form-data"],
   "produces": ["application/json"],
   "paths": {
     "/users/signup": {
@@ -139,6 +139,7 @@
       "post": {
         "tags": ["장바구니 API"],
         "description": "",
+        "consumes" : ["multipart/form-data"],
         "parameters": [
           {
             "name": "goodsId",
@@ -156,14 +157,40 @@
             }
           },
           {
-            "name": "body",
-            "in": "body",
-            "type": "string",
+            "name": "formData",
+            "in": "commentImage",
+            "type": "file",
             "schema": {
-              "type": "object",
+              "type": "file",
               "properties": {
                 "quantity": {
-                  "example": "수량"
+                  "example": "이미지"
+                }
+              }
+            }
+          },
+          {
+            "name": "formData",
+            "in": "content",
+            "type": "string",
+            "schema": {
+              "type": "string",
+              "properties": {
+                "content": {
+                  "example": "댓글 내용"
+                }
+              }
+            }
+          },
+          {
+            "name": "formData",
+            "in": "content",
+            "type": "string",
+            "schema": {
+              "type": "string",
+              "properties": {
+                "quantity": {
+                  "example": "댓글 내용"
                 }
               }
             }

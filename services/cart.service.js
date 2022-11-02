@@ -3,6 +3,20 @@ const CartRepository = require('../repositories/cart.repository');
 class CartService {
   cartRepository = new CartRepository();
 
+    //기존에 담은 품목 여부 조회
+    didIAlreadyPutThis = async (goodsId, userId) => {
+        const didIAlreadyPutThis = await this.cartRepository.didIAlreadyPutThis(
+            goodsId,
+            userId);
+        return didIAlreadyPutThis;
+    }
+
+    //기존에 담은 품목일 경우 수량만 플러스
+    plusNumsOfGoods = async (goodsId, userId, quantity) => {
+        const plusNumsOfGoods = await this.cartRepository.plusNumsOfGoods(goodsId, userId, quantity);
+        return plusNumsOfGoods;
+    }
+
   // 장바구니 생성
   createCt = async ( goodsId, userId, quantity ) => {
     const createCartData = await this.cartRepository.createCt(
