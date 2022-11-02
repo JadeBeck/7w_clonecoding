@@ -8,19 +8,16 @@ require("dotenv").config();
 class UserService {
   userRepository = new UserRepository();
 
-
   //아이디 중복검사
   checkID = async (loginId) => {
     const user = await this.userRepository.findUser(loginId);
     if (!user) {
-      throw { message: "사용 가능한 아이디입니다." };
+      return //checkId 함수 종료 후 controller로 돌아감
     } else{
-      throw { message: "중복된 아이디입니다." };
+      throw { message: "중복된 아이디입니다." };  //여기서 에러에 걸리면 controller로 돌아가서
     }
-
   };
   
-
   //회원가입
   createUser = async (loginId, userName, password, address) => {
     const user = await this.userRepository.loginUser(loginId);
