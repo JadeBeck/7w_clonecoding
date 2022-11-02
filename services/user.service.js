@@ -55,7 +55,7 @@ class UserService {
       token: jwt.sign({ userId: user.userId, userName: user.userName }, process.env.SECRETKEY, {  //토큰 만들어주기
         expiresIn: "24h",
       }),
-      userinfo: {userId : user.userId, loginId : user.loginId, userName : user.userName}
+      userinfo: {userId : user.userId, loginId : user.loginId, userName : user.userName, address : user.address}
     };
   }
 
