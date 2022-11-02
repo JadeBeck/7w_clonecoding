@@ -9,8 +9,6 @@ class UserRepository {
             password,
             address
           });
-         
-         
           return createUserData;
     };
 
@@ -18,6 +16,11 @@ class UserRepository {
     //loginId로 User 정보 찾기
     loginUser = async (loginId) => {
        const user = await Users.findOne({where: {loginId}})
+        return user;
+    }
+
+    findUser = async (loginId) => {
+        const user = await Users.findOne({where: {loginId}})
         return user;
     }
 }
