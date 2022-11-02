@@ -133,43 +133,41 @@
           }
         ],
         "responses": {}
-      }
-    },
-    "/carts/{goodsId}": {
-      "post": {
-        "tags": ["장바구니 API"],
-        "description": "",
-        "consumes" : ["multipart/form-data"],
-        "parameters": [
-          {
-            "name": "goodsId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "authorization",
-            "in": "header",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "type": "string",
-            "schema": {
+      },
+      "/carts/{goodsId}": {
+        "post": {
+          "tags": ["장바구니 API"],
+          "description": "",
+          "parameters": [
+            {
+              "name": "goodsId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "authorization",
+              "in": "header",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "body",
+              "in": "body",
               "type": "string",
-              "properties": {
-                "quantity": {
-                  "example": "수량"
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "quantity": {
+                    "example": "수량"
+                  }
                 }
               }
             }
-          }
-        ],
+          ],
         "responses": {
           "401": {
             "description": "Unauthorized"
