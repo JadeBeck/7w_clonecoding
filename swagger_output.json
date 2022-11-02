@@ -13,6 +13,27 @@
   "consumes": ["application/json"],
   "produces": ["application/json"],
   "paths": {
+    "/users/check": {
+      "post": {
+        "tags": ["회원 정보 API"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "loginId": {
+                  "example": "아이디"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
     "/users/signup": {
       "post": {
         "tags": ["회원 정보 API"],
