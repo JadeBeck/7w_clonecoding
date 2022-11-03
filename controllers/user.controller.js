@@ -2,11 +2,11 @@ const UserService = require('../services/user.service');
 const Joi = require('joi');
 
 const schema = Joi.object().keys({
-    loginId: Joi.string().alphanum().min(6).max(12),
-    userName: Joi.string().min(1).max(6),
-    password: Joi.string().min(6).max(12).disallow('loginId'),
+    loginId: Joi.string().alphanum().min(6).max(12).required(),
+    userName: Joi.string().min(1).max(6).required(),
+    password: Joi.string().min(6).max(12).required(),
     confirmPassword: Joi.ref('password'),
-    address: Joi.string()
+    address: Joi.string().required()
 });
 
 class UserController {
