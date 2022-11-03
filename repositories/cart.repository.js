@@ -11,7 +11,7 @@ class CartRepository {
 
   //기존에 담은 품목일 경우 수량만 플러스
   plusNumsOfGoods = async (goodsId, userId, quantity) => {
-    const plusNumsOfGoods = await Carts.increment({quantity}, {where: {goodsId, userId}});
+    await Carts.increment({quantity}, {where: {goodsId, userId}});
     const findGoodsInCart = await Carts.findOne({where: {goodsId, userId}, include: {
         model: Goods,
         key : 'goodsId',
@@ -21,23 +21,14 @@ class CartRepository {
 
   // 장바구니 생성
   createCt = async ( goodsId, userId, quantity ) => {
-    const createCartData = await Carts.create({
-      goodsId,
-      userId,
-      quantity,
-    });
-    // const createCartData = await Carts.findOne({
-    //     where: { goodsId, userId, quantity }, 
-    //     attributes: ['goodsId'], 
-    //     include: {
-    //       model: Goods,
-    //       order: [['createdAt', 'DESC']], 
-    //       attributes: ['goodsName', 'goodsImage', 'price', 'delivery', 'weight'],
-    //     }
-    //   });       
-    return createCartData;
+    await Carts.create({ goodsId, userId, quantity, });
+    const createCartData = await Carts.findOne({where: {goodsId, userId}, include: {
+      model: Goods,
+      key : 'goodsId',
+      attributes: ['goodsName', 'goodsImage', 'price', 'delivery', 'weight']}});
+  return createCartData;
   };
-
+    
   // 장바구니 조회
   findAllCart = async ( userId ) => {
       const allCart = await Carts.findAll({
@@ -46,7 +37,9 @@ class CartRepository {
         model: Goods,
         key : 'goodsId',
         attributes: ['goodsName', 'goodsImage', 'price', 'delivery', 'weight'],}    
-          
+      });
+      return allCart;
+    };   
     //   where: { userId },
     //   attributes: ['goodsId'], // 기준이 되는 아이
     //   include: {
@@ -54,12 +47,9 @@ class CartRepository {
     //     order: [['createdAt', 'DESC']], // carts의 createdAt 기준
     //     attributes: ['goodsName', 'goodsImage', 'price', 'delivery', 'weight'],
     //   }
-    });
-    return allCart;
-  };    
+   
 
     
- 
   // 장바구니 수정
   updateCt = async (cartsId, userId, quantity) => {
     const updateCartData = await Carts.update(
@@ -83,6 +73,14 @@ class CartRepository {
 
     return findCart;
   };
+
+  // 굿즈 찾기
+  findGoodsById = async (goodsId) => {
+    const findGoods = await Goods.findOne({ where: { goodsId } });
+
+    return findGoods;
+  };
+
 }
 
 module.exports = CartRepository;

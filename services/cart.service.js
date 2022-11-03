@@ -1,13 +1,13 @@
 const CartRepository = require('../repositories/cart.repository');
+const GoodsRepository = require('../repositories/goods.repository');
 
 class CartService {
   cartRepository = new CartRepository();
+  GoodsRepository = new GoodsRepository();
 
     //기존에 담은 품목 여부 조회
     didIAlreadyPutThis = async (goodsId, userId) => {
-        const didIAlreadyPutThis = await this.cartRepository.didIAlreadyPutThis(
-            goodsId,
-            userId);
+        const didIAlreadyPutThis = await this.cartRepository.didIAlreadyPutThis( goodsId, userId);
         return didIAlreadyPutThis;
     }
 
@@ -18,12 +18,11 @@ class CartService {
     }
 
   // 장바구니 생성
-  createCt = async ( goodsId, userId, quantity ) => {
-    const createCartData = await this.cartRepository.createCt(
-      goodsId,
-      userId,
-      quantity,
-    );
+  createCt = async (goodsId, userId, quantity) => {
+    const findGoods = await this.GoodsRepository.findGoodsById(goodsId);
+    if (!findGoods) throw new Error("상품이 존재하지 않았습니다.");
+
+    const createCartData = await this.cartRepository.createCt(goodsId, userId, quantity );
     return createCartData;
     // return {
     //   postId: createCartData.postId,
@@ -36,24 +35,14 @@ class CartService {
 
   // 장바구니 조회
     findAllCart = async (userId) => {
-        const allCart = await this.cartRepository.findAllCart(userId);
-        if (allCart.length === 0) {
-            throw new Error("장바구니가 비어있습니다.");
-        } else {
-            return allCart;
-        }
-            
-    // return allCart.map((cart) => {
-    //   return {
-    //     commentId: cart.commentId,
-    //     nickname: cart.nickname,
-    //     comment: cart.comment,
-    //     createdAt: cart.createdAt,
-    //     updatedAt: cart.updatedAt,
-    //   };
-    // });
+      const allCart = await this.cartRepository.findAllCart(userId);
+      return allCart;
+        // if (allCart.length === 0) {
+        //     throw new Error("장바구니가 비어있습니다.");
+        // } else {
+        //     return allCart;
+        // }
   };
-    
     
   // 장바구니 수정
   updateCt = async (cartsId, userId, quantity) => {     
@@ -76,7 +65,6 @@ class CartService {
 
       await this.cartRepository.deleteCt(cartsId, userId);
       return '삭제하였습니다.';
-    
   };
 }
 
